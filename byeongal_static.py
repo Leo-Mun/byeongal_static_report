@@ -4,6 +4,7 @@ import pefile
 import hashlib
 import json
 import magic
+import datetime
 
 def print_help () :
     pass
@@ -41,13 +42,24 @@ def get_hash(file_path):
 
     return md5, sha1, sha256
 
+def get_compile_time(pe) :
+    # timestamp
+    tstamp = pe.FILE_HEADER.TimeDateStamp
+    try:
+        tsdate = datetime.datetime.fromtimestamp(tstamp).strftime("%Y-%m-%d %H:%M:%S")
+    except:
+        tsdate = str(tstamp) + " [Invalid date]"
+    return tsdate
+
 def run( file_path ) :
     pe = pefile.PE(file_path)
     json_obj = dict()
 
     # Hash
     json_obj['hash'] = dict()
+    ## Cryptographic Hash
     json_obj['hash']['md5'], json_obj['hash']['sha1'], json_obj['hash']['sha256'] = get_hash(file_path)
+    ## Imphash
     json_obj['hash']['imphash'] = get_imphash(pe)
 
     # Magic
@@ -55,6 +67,11 @@ def run( file_path ) :
 
     # File Size
     json_obj['file_size'] = os.path.getsize(file_path)
+
+    # PE Info
+    json_obj['pe_info'] = dict()
+    ## Compile Time
+    json_obj['pe_info']['compile_time'] = get_compile_time(pe)
 
     # Save report file
     with open("{}.json".format(json_obj['hash']['sha256']), 'w') as f :
