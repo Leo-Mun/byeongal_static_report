@@ -6,6 +6,7 @@ import hashlib
 import json
 import magic
 import datetime
+import chardet
 
 _ROOT = os.path.abspath(os.path.dirname(__file__))
 _USER_DB = os.path.join(_ROOT, 'signatures', 'userdb.txt')
@@ -83,8 +84,12 @@ def get_resources_info( pe ) :
                 for resource_id in resource_type.directory.entries :
                     if hasattr(resource_id, 'directory'):
                         for resource_lang in resource_id.directory.entries:
+                            data = ""
                             try:
-                                data = pe.get_data(resource_lang.data.struct.OffsetToData, resource_lang.data.struct.Size).decode('utf-8')
+                                raw_data = pe.get_data(resource_lang.data.struct.OffsetToData, resource_lang.data.struct.Size)
+                                encoding_option = chardet.detect(raw_data)['encoding']
+                                if encoding_option != None :
+                                    data = raw_data.decode(encoding_option)
                             except:
                                 pass
                             lang = pefile.LANG.get(resource_lang.data.lang, '*unknown*')
