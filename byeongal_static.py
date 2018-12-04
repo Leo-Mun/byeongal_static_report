@@ -1,10 +1,14 @@
 import sys
 import os
 import pefile
+import peutils
 import hashlib
 import json
 import magic
 import datetime
+
+_ROOT = os.path.abspath(os.path.dirname(__file__))
+_USER_DB = os.path.join(_ROOT, 'signatures', 'userdb_panda.txt')
 
 def print_help () :
     pass
@@ -51,6 +55,17 @@ def get_compile_time(pe) :
         tsdate = str(tstamp) + " [Invalid date]"
     return tsdate
 
+def get_packer_info( pe ) :
+    signatures = peutils.SignatureDatabase(_USER_DB)
+    matches = signatures.match_all(pe, ep_only=True)
+    array = []
+    if matches:
+        for item in matches:
+            if item[0] not in array:
+                array.append(item[0])
+    return array
+    pass
+
 def run( file_path ) :
     pe = pefile.PE(file_path)
     json_obj = dict()
@@ -72,6 +87,7 @@ def run( file_path ) :
     json_obj['pe_info'] = dict()
     ## Compile Time
     json_obj['pe_info']['compile_time'] = get_compile_time(pe)
+    json_obj['pe_info']['packer_info'] = get_packer_info( pe )
 
     # Save report file
     with open("{}.json".format(json_obj['hash']['sha256']), 'w') as f :
