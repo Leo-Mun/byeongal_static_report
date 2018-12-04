@@ -3,6 +3,7 @@ import os
 import pefile
 import hashlib
 import json
+import magic
 
 def print_help () :
     pass
@@ -49,6 +50,10 @@ def run( file_path ) :
     json_obj['hash']['md5'], json_obj['hash']['sha1'], json_obj['hash']['sha256'] = get_hash(file_path)
     json_obj['hash']['imphash'] = get_imphash(pe)
 
+    # Magic
+    json_obj['file_type'] = magic.from_file(file_path)
+
+    # Save report file
     with open("{}.json".format(json_obj['hash']['sha256']), 'w') as f :
         json.dump(json_obj, f)
 
