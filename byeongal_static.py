@@ -53,9 +53,12 @@ def run( file_path ) :
     # Magic
     json_obj['file_type'] = magic.from_file(file_path)
 
+    # File Size
+    json_obj['file_size'] = os.path.getsize(file_path)
+
     # Save report file
     with open("{}.json".format(json_obj['hash']['sha256']), 'w') as f :
-        json.dump(json_obj, f)
+        json.dump(json_obj, f, indent=4)
 
 if __name__ == '__main__' :
     if len(sys.argv) == 1 :
