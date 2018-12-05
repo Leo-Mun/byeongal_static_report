@@ -154,6 +154,21 @@ def get_import_function( pe ) :
 
     return libdict
 
+def get_export_function( pe ) :
+    array = []
+    try:
+        for exp in pe.DIRECTORY_ENTRY_EXPORT.symbols:
+            # No dll
+            address = hex(pe.OPTIONAL_HEADER.ImageBase + exp.address)
+            encoding_option = chardet.detect(exp.name)['encoding']
+            if encoding_option == None :
+                continue
+            function = exp.name.decode(encoding_option)
+            array.append({"address": address, "function": function})
+    except:
+        pass
+    return array
+
 def get_apialert_info( pe ) :
     alerts = set()
     with open(_APIALERT, 'r') as f :
@@ -175,6 +190,9 @@ def get_apialert_info( pe ) :
 def run( file_path ) :
     pe = pefile.PE(file_path)
     json_obj = dict()
+
+    # Dll
+    json_obj['dll'] = pe.is_dll()
 
     # Hash
     json_obj['hash'] = dict()
@@ -203,8 +221,11 @@ def run( file_path ) :
     json_obj['pe_info']['sections_ino'] = get_sections_info(pe)
     ## Import Function
     json_obj['pe_info']['import_function'] = get_import_function(pe)
+    ## Export Function
+    json_obj['pe_info']['export_function'] = get_export_function(pe)
     ## API Alert Info
     json_obj['pe_info']['apialert_info'] = get_apialert_info( pe )
+
     # Save report file
     with open("{}.json".format(json_obj['hash']['sha256']), 'w') as f :
         json.dump(json_obj, f, indent=4)
