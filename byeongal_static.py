@@ -119,6 +119,40 @@ def get_sections_info( pe ) :
 
     return array
 
+def get_import_function( pe ) :
+    array = []
+    library = set()
+    libdict = {}
+    try:
+        for entry in pe.DIRECTORY_ENTRY_IMPORT:
+            dll = entry.dll
+            encoding_option = chardet.detect(dll)['encoding']
+            if encoding_option == None:
+                continue
+            dll = dll.decode(encoding_option, 'ignore')
+            for imp in entry.imports:
+                address = hex(imp.address)
+                function = imp.name
+                encoding_option = chardet.detect(function)['encoding']
+                if encoding_option == None:
+                    continue
+                function = function.decode(encoding_option, 'ignore')
+                if dll not in library:
+                    library.add(dll)
+                array.append({"library": dll, "address": address, "function": function})
+
+        for key in library:
+            libdict[key] = []
+
+        for lib in library:
+            for item in array:
+                if lib == item['library']:
+                    libdict[lib].append({"address": item['address'], "function": item['function']})
+    except:
+        pass
+
+    return libdict
+
 def run( file_path ) :
     pe = pefile.PE(file_path)
     json_obj = dict()
@@ -148,7 +182,8 @@ def run( file_path ) :
     json_obj['pe_info']['resources_info'] = get_resources_info(pe)
     ## Sections Info
     json_obj['pe_info']['sections_ino'] = get_sections_info(pe)
-
+    ## Import Function
+    json_obj['pe_info']['import_function'] = get_import_function(pe)
     # Save report file
     with open("{}.json".format(json_obj['hash']['sha256']), 'w') as f :
         json.dump(json_obj, f, indent=4)
