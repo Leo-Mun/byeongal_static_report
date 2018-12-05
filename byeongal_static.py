@@ -9,7 +9,7 @@ import datetime
 import chardet
 
 _ROOT = os.path.abspath(os.path.dirname(__file__))
-_USER_DB = os.path.join(_ROOT, 'signatures', 'userdb.txt')
+_USER_DB = os.path.join(_ROOT, 'signatures', 'userdb_panda.txt')
 
 def print_help () :
     pass
@@ -89,7 +89,7 @@ def get_resources_info( pe ) :
                                 raw_data = pe.get_data(resource_lang.data.struct.OffsetToData, resource_lang.data.struct.Size)
                                 encoding_option = chardet.detect(raw_data)['encoding']
                                 if encoding_option != None :
-                                    data = raw_data.decode(encoding_option)
+                                    data = raw_data.decode(encoding_option, 'ignore')
                             except:
                                 pass
                             lang = pefile.LANG.get(resource_lang.data.lang, '*unknown*')
