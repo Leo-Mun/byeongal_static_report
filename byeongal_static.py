@@ -10,6 +10,7 @@ import chardet
 
 _ROOT = os.path.abspath(os.path.dirname(__file__))
 _USER_DB = os.path.join(_ROOT, 'signatures', 'userdb_panda.txt')
+_APIALERT = os.path.join(_ROOT, 'signatures', 'apialertv6.1.txt')
 
 def print_help () :
     pass
@@ -153,6 +154,24 @@ def get_import_function( pe ) :
 
     return libdict
 
+def get_apialert_info( pe ) :
+    alerts = set()
+    with open(_APIALERT, 'r') as f :
+        for line in f.readlines() :
+            alerts.add(line.strip())
+    apialert_found = set()
+    if hasattr(pe, 'DIRECTORY_ENTRY_IMPORT'):
+        for lib in pe.DIRECTORY_ENTRY_IMPORT:
+            for imp in lib.imports:
+                encoding_option = chardet.detect(imp.name)['encoding']
+                if encoding_option == None :
+                    continue
+                imp_name = imp.name.decode(encoding_option)
+                if imp_name in alerts :
+                    apialert_found.add(imp_name)
+
+    return sorted(apialert_found)
+
 def run( file_path ) :
     pe = pefile.PE(file_path)
     json_obj = dict()
@@ -184,14 +203,15 @@ def run( file_path ) :
     json_obj['pe_info']['sections_ino'] = get_sections_info(pe)
     ## Import Function
     json_obj['pe_info']['import_function'] = get_import_function(pe)
+    ## API Alert Info
+    json_obj['pe_info']['apialert_info'] = get_apialert_info( pe )
     # Save report file
     with open("{}.json".format(json_obj['hash']['sha256']), 'w') as f :
         json.dump(json_obj, f, indent=4)
 
 if __name__ == '__main__' :
     if len(sys.argv) == 1 :
-        #print_help()
-        run("atom.exe")
+        print_help()
         exit(0)
     if len(sys.argv) == 2 :
         file_path = sys.argv[1]
