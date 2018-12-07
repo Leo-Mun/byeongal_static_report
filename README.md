@@ -13,3 +13,7 @@ $ python byeongal_static.py <file_path>
 ## Reference
 To create this software, I refer to the following software:
 * [PEframe 5.0.1](https://github.com/guelfoweb/peframe)
+
+## Contact
+If you want to contact me, please send me an email to my email address(corea_kyj@naver.com).
+* Ps. I can understand only English and Korean and prefer to use Korean.
