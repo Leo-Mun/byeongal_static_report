@@ -198,8 +198,6 @@ def run( file_path ) :
     json_obj['hash'] = dict()
     ## Cryptographic Hash
     json_obj['hash']['md5'], json_obj['hash']['sha1'], json_obj['hash']['sha256'] = get_hash(file_path)
-    ## Imphash
-    json_obj['hash']['imphash'] = get_imphash(pe)
 
     # Magic
     json_obj['file_type'] = magic.from_file(file_path)
@@ -209,6 +207,8 @@ def run( file_path ) :
 
     # PE Info
     json_obj['pe_info'] = dict()
+    ## Imphash
+    json_obj['pe_info']['imphash'] = get_imphash(pe)
     ## Compile Time
     json_obj['pe_info']['compile_time'] = get_compile_time(pe)
     ## Packer Info
