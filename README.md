@@ -1,5 +1,5 @@
 # Byeongal Static Report
-Byeongal Static Report is an automated static analysis open source software. You can get a report( md5.json ) which contains following informatioin:
+Byeongal Static Report is an automated static analysis open source software. You can get a report( [md5.json](./7d148e220040de2fae1439fbc0e783ef344dceaea4757611722d8378a4938d0b.json) ) which contains following informatioin:
 * File Hash ( md5, sha1, and sha256 )
 * PE File Information ( Section, Compile Information, Resources, Import, Export, API and imphash )
 
@@ -12,6 +12,7 @@ $ python byeongal_static.py <file_path>
 ### Update 2018.12
 * File Hash Information ( md5, sha1, sha256 )
 * File Magic
+* String
 * PE File Information
   * imphash
   * Compile Time
