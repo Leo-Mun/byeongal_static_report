@@ -116,7 +116,8 @@ def get_sections_info( pe ) :
         va = hex(section.VirtualAddress)
         vs = hex(section.Misc_VirtualSize)
         srd = section.SizeOfRawData
-        array.append({"name": scn.decode(), "hash_md5": md5, "hash_sha1": sha1, "suspicious": spc, "virtual_address": va, "virtual_size": vs, "size_raw_data": srd})
+        entropy = section.get_entropy()
+        array.append({"name": scn.decode(), "hash_md5": md5, "hash_sha1": sha1, "suspicious": spc, "virtual_address": va, "virtual_size": vs, "size_raw_data": srd, "entropy" : entropy})
 
     return array
 
