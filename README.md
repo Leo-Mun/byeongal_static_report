@@ -7,9 +7,19 @@ Byeongal Static Report is an automated static analysis open source software. You
 $ python byeongal_static.py <file_path> 
 ```
 
-## License
-[![License](https://img.shields.io/:license-gpl3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
-
+## Update Log
+### Update 2018.12
+* File Hash Information ( md5, sha1, sha256 )
+* File Magic
+* PE File Information
+  * imphash
+  * Compile Time
+  * Packer Information
+  * Sections Information
+  * Resources Information
+  * Import and Export
+  * API Alert
+  
 ## Reference
 To create this software, I refer to the following software:
 * [PEframe 5.0.1](https://github.com/guelfoweb/peframe)
@@ -17,3 +27,6 @@ To create this software, I refer to the following software:
 ## Contact
 If you want to contact me, please send me an email to my email address(corea_kyj@naver.com).
 * Ps. I can understand only English and Korean and prefer to use Korean.
+
+## License
+[![License](https://img.shields.io/:license-gpl3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
