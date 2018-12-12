@@ -7,10 +7,13 @@ import json
 import magic
 import datetime
 import chardet
+import yara
+
 
 _ROOT = os.path.abspath(os.path.dirname(__file__))
 _USER_DB = os.path.join(_ROOT, 'signatures', 'userdb_panda.txt')
 _APIALERT = os.path.join(_ROOT, 'signatures', 'apialertv6.1.txt')
+_ANTIDEBUG = os.path.join(_ROOT, 'signatures', 'AntiDebugging.yara')
 
 def print_help () :
     pass
@@ -188,6 +191,15 @@ def get_apialert_info( pe ) :
 
     return sorted(apialert_found)
 
+def get_anti_debug_info( file_path ) :
+    rules = yara.compile(_ANTIDEBUG)
+    with open(file_path, 'rb') as f :
+        matches = rules.match(data = f.read())
+    ret = []
+    for dict_obj in matches['main'] :
+        ret.append(dict_obj['rule'])
+    return ret
+
 def run( file_path ) :
     pe = pefile.PE(file_path)
     json_obj = dict()
@@ -227,6 +239,10 @@ def run( file_path ) :
     ## API Alert Info
     json_obj['pe_info']['apialert_info'] = get_apialert_info( pe )
 
+    # Yara
+    json_obj['yara'] = dict()
+    ## Anti Debugging
+    json_obj['yara']['anti_debug_info'] = get_anti_debug_info( file_path )
     # Save report file
     with open("{}.json".format(json_obj['hash']['sha256']), 'w') as f :
         json.dump(json_obj, f, indent=4)
