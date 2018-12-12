@@ -8,7 +8,7 @@ import magic
 import datetime
 import chardet
 import yara
-
+import string
 
 _ROOT = os.path.abspath(os.path.dirname(__file__))
 _USER_DB = os.path.join(_ROOT, 'signatures', 'userdb_panda.txt')
@@ -191,16 +191,40 @@ def get_apialert_info( pe ) :
 
     return sorted(apialert_found)
 
-def get_anti_debug_info( file_path ) :
+def get_anti_debug_info( file_data ) :
     rules = yara.compile(_ANTIDEBUG)
-    with open(file_path, 'rb') as f :
-        matches = rules.match(data = f.read())
+
+    matches = rules.match(data = file_data)
+
     ret = []
     for dict_obj in matches['main'] :
         ret.append(dict_obj['rule'])
+
     return ret
 
+def get_string( file_data ) :
+    printable = set(string.printable)
+    ret = []
+    found_str = ""
+    for char in file_data :
+        try :
+            char = chr(char)
+            if char in printable :
+                found_str += char
+            elif len(found_str) >= 4 :
+                ret.append(found_str)
+                found_str = ""
+            else :
+                found_str = ""
+        except :
+            found_str = ""
+    return ret
+
+
 def run( file_path ) :
+    with open(file_path, 'rb') as f :
+        file_data = f.read()
+
     pe = pefile.PE(file_path)
     json_obj = dict()
 
@@ -217,6 +241,9 @@ def run( file_path ) :
 
     # File Size
     json_obj['file_size'] = os.path.getsize(file_path)
+
+    # String
+    json_obj['string'] = get_string(file_data)
 
     # PE Info
     json_obj['pe_info'] = dict()
@@ -242,7 +269,7 @@ def run( file_path ) :
     # Yara
     json_obj['yara'] = dict()
     ## Anti Debugging
-    json_obj['yara']['anti_debug_info'] = get_anti_debug_info( file_path )
+    json_obj['yara']['anti_debug_info'] = get_anti_debug_info( file_data )
     # Save report file
     with open("{}.json".format(json_obj['hash']['sha256']), 'w') as f :
         json.dump(json_obj, f, indent=4)
