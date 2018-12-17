@@ -23,7 +23,12 @@ $ python byeongal_static.py <file_path>
   * API Alert
 * Yara
   * Anti Debugging
-  
+* Fuzzy Hash
+  * ssdeep
+
+## Tested On
+* Ubuntu 16.04 LTS
+
 ## Reference
 To create this software, I refer to the following software:
 * [PEframe 5.0.1](https://github.com/guelfoweb/peframe)
