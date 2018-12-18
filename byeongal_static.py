@@ -198,8 +198,8 @@ def get_anti_debug_info( file_data ) :
     matches = rules.match(data = file_data)
 
     ret = []
-    for dict_obj in matches['main'] :
-        ret.append(dict_obj['rule'])
+    for each in matches :
+        ret.append(each.rule)
 
     return ret
 
@@ -223,7 +223,7 @@ def get_string( file_data ) :
 
 def get_fuzzy_hash( file_path ) :
     ret = dict()
-    with open(file_path, 'r') as f :
+    with open(file_path, 'rb') as f :
         context = f.read()
     ret['ssdeep'] = ssdeep.hash(context)
     return ret
