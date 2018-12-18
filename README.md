@@ -8,7 +8,7 @@ To use **Byeongal Static Report**, you have to install following python modules.
 ```bash
 $ pip3 install pefile
 $ pip3 install python-magic 
-$ pip3 install yara
+$ pip3 install yara-python
 $ pip3 install ssdeep
 ```
 ## Usage
