@@ -12954,7 +12954,6 @@
     "pe_info": {
         "imphash": "100f313c3eeb0e6bb4bcd10918d650f0",
         "compile_time": "2020-08-28 13:38:41",
-        "packer_info": [],
         "sections_number": 6,
         "resources_info": [
             {
@@ -13037,70 +13036,256 @@
             }
         ],
         "import_function": {
-            "api-ms-win-core-synch-l1-2-0.dll": [
+            "api-ms-win-core-console-l2-2-0.dll": [
                 {
-                    "address": "0x180078b30",
-                    "function": "InitOnceExecuteOnce"
+                    "address": "0x180077698",
+                    "function": "SetConsoleTitleA"
                 },
                 {
-                    "address": "0x180078b38",
-                    "function": "InitializeSynchronizationBarrier"
+                    "address": "0x1800776a0",
+                    "function": "GetConsoleOriginalTitleA"
                 },
                 {
-                    "address": "0x180078b40",
-                    "function": "SignalObjectAndWait"
+                    "address": "0x1800776a8",
+                    "function": "GetConsoleOriginalTitleW"
                 },
                 {
-                    "address": "0x180078b48",
-                    "function": "DeleteSynchronizationBarrier"
+                    "address": "0x1800776b0",
+                    "function": "GetConsoleTitleA"
                 },
                 {
-                    "address": "0x180078b50",
-                    "function": "EnterSynchronizationBarrier"
+                    "address": "0x1800776b8",
+                    "function": "GetConsoleTitleW"
+                },
+                {
+                    "address": "0x1800776c0",
+                    "function": "SetConsoleTitleW"
                 }
             ],
-            "api-ms-win-core-errorhandling-l1-1-0.dll": [
+            "api-ms-win-core-console-l3-2-0.dll": [
                 {
-                    "address": "0x180077890",
-                    "function": "SetUnhandledExceptionFilter"
+                    "address": "0x1800776d0",
+                    "function": "SetConsoleNumberOfCommandsA"
                 },
                 {
-                    "address": "0x180077898",
-                    "function": "GetErrorMode"
+                    "address": "0x1800776d8",
+                    "function": "SetConsoleHistoryInfo"
                 },
                 {
-                    "address": "0x1800778a0",
-                    "function": "RaiseException"
+                    "address": "0x1800776e0",
+                    "function": "SetConsoleDisplayMode"
                 },
                 {
-                    "address": "0x1800778a8",
-                    "function": "SetErrorMode"
+                    "address": "0x1800776e8",
+                    "function": "GetNumberOfConsoleMouseButtons"
                 },
                 {
-                    "address": "0x1800778b0",
-                    "function": "GetLastError"
+                    "address": "0x1800776f0",
+                    "function": "GetCurrentConsoleFontEx"
                 },
                 {
-                    "address": "0x1800778b8",
-                    "function": "UnhandledExceptionFilter"
+                    "address": "0x1800776f8",
+                    "function": "GetCurrentConsoleFont"
                 },
                 {
-                    "address": "0x1800778c0",
-                    "function": "SetLastError"
+                    "address": "0x180077700",
+                    "function": "GetConsoleWindow"
+                },
+                {
+                    "address": "0x180077708",
+                    "function": "GetConsoleSelectionInfo"
+                },
+                {
+                    "address": "0x180077710",
+                    "function": "GetConsoleProcessList"
+                },
+                {
+                    "address": "0x180077718",
+                    "function": "GetConsoleHistoryInfo"
+                },
+                {
+                    "address": "0x180077720",
+                    "function": "GetConsoleFontSize"
+                },
+                {
+                    "address": "0x180077728",
+                    "function": "GetConsoleDisplayMode"
+                },
+                {
+                    "address": "0x180077730",
+                    "function": "SetCurrentConsoleFontEx"
+                },
+                {
+                    "address": "0x180077738",
+                    "function": "GetConsoleCommandHistoryLengthW"
+                },
+                {
+                    "address": "0x180077740",
+                    "function": "GetConsoleCommandHistoryLengthA"
+                },
+                {
+                    "address": "0x180077748",
+                    "function": "GetConsoleCommandHistoryA"
+                },
+                {
+                    "address": "0x180077750",
+                    "function": "GetConsoleAliasesW"
+                },
+                {
+                    "address": "0x180077758",
+                    "function": "GetConsoleAliasesLengthW"
+                },
+                {
+                    "address": "0x180077760",
+                    "function": "GetConsoleAliasesLengthA"
+                },
+                {
+                    "address": "0x180077768",
+                    "function": "GetConsoleAliasesA"
+                },
+                {
+                    "address": "0x180077770",
+                    "function": "GetConsoleAliasW"
+                },
+                {
+                    "address": "0x180077778",
+                    "function": "GetConsoleAliasExesW"
+                },
+                {
+                    "address": "0x180077780",
+                    "function": "GetConsoleAliasExesLengthW"
+                },
+                {
+                    "address": "0x180077788",
+                    "function": "GetConsoleAliasExesLengthA"
+                },
+                {
+                    "address": "0x180077790",
+                    "function": "GetConsoleAliasExesA"
+                },
+                {
+                    "address": "0x180077798",
+                    "function": "GetConsoleAliasA"
+                },
+                {
+                    "address": "0x1800777a0",
+                    "function": "ExpungeConsoleCommandHistoryW"
+                },
+                {
+                    "address": "0x1800777a8",
+                    "function": "ExpungeConsoleCommandHistoryA"
+                },
+                {
+                    "address": "0x1800777b0",
+                    "function": "AddConsoleAliasW"
+                },
+                {
+                    "address": "0x1800777b8",
+                    "function": "AddConsoleAliasA"
+                },
+                {
+                    "address": "0x1800777c0",
+                    "function": "SetConsoleNumberOfCommandsW"
+                },
+                {
+                    "address": "0x1800777c8",
+                    "function": "GetConsoleCommandHistoryW"
                 }
             ],
-            "api-ms-win-core-processenvironment-l1-2-0.dll": [
+            "api-ms-win-core-file-l1-2-2.dll": [
                 {
-                    "address": "0x1800783e8",
-                    "function": "SearchPathA"
+                    "address": "0x180077bd8",
+                    "function": "FindFirstFileNameW"
                 },
                 {
-                    "address": "0x1800783f0",
-                    "function": "NeedCurrentDirectoryForExePathW"
+                    "address": "0x180077be0",
+                    "function": "GetVolumeInformationA"
                 },
                 {
-                    "address": "0x1800783f8",
-                    "function": "NeedCurrentDirectoryForExePathA"
+                    "address": "0x180077be8",
+                    "function": "FindNextFileNameW"
+                },
+                {
+                    "address": "0x180077bf0",
+                    "function": "GetTempPathA"
+                },
+                {
+                    "address": "0x180077bf8",
+                    "function": "GetTempFileNameA"
+                },
+                {
+                    "address": "0x180077c00",
+                    "function": "FindFirstStreamW"
+                }
+            ],
+            "api-ms-win-core-sysinfo-l1-1-0.dll": [
+                {
+                    "address": "0x180078b78",
+                    "function": "GetTickCount"
+                },
+                {
+                    "address": "0x180078b80",
+                    "function": "GetLogicalProcessorInformation"
+                },
+                {
+                    "address": "0x180078b88",
+                    "function": "GetLogicalProcessorInformationEx"
+                },
+                {
+                    "address": "0x180078b90",
+                    "function": "SetLocalTime"
+                },
+                {
+                    "address": "0x180078b98",
+                    "function": "GlobalMemoryStatusEx"
+                },
+                {
+                    "address": "0x180078ba0",
+                    "function": "GetWindowsDirectoryW"
+                },
+                {
+                    "address": "0x180078ba8",
+                    "function": "GetWindowsDirectoryA"
+                },
+                {
+                    "address": "0x180078bb0",
+                    "function": "GetVersionExW"
+                },
+                {
+                    "address": "0x180078bb8",
+                    "function": "GetVersionExA"
+                },
+                {
+                    "address": "0x180078bc0",
+                    "function": "GetVersion"
+                },
+                {
+                    "address": "0x180078bc8",
+                    "function": "GetSystemTimeAsFileTime"
+                },
+                {
+                    "address": "0x180078bd0",
+                    "function": "GetSystemTimeAdjustment"
+                },
+                {
+                    "address": "0x180078bd8",
+                    "function": "GetSystemTime"
+                },
+                {
+                    "address": "0x180078be0",
+                    "function": "GetSystemInfo"
+                },
+                {
+                    "address": "0x180078be8",
+                    "function": "GetLocalTime"
+                },
+                {
+                    "address": "0x180078bf0",
+                    "function": "GetComputerNameExW"
+                },
+                {
+                    "address": "0x180078bf8",
+                    "function": "GetComputerNameExA"
                 }
             ],
             "KERNELBASE.dll": [
@@ -13461,64 +13646,782 @@
                     "function": "KernelBaseGetGlobalData"
                 }
             ],
-            "api-ms-win-core-profile-l1-1-0.dll": [
+            "api-ms-win-core-file-l2-1-2.dll": [
                 {
-                    "address": "0x180078680",
-                    "function": "QueryPerformanceFrequency"
+                    "address": "0x180077c80",
+                    "function": "CreateHardLinkA"
                 },
                 {
-                    "address": "0x180078688",
-                    "function": "QueryPerformanceCounter"
+                    "address": "0x180077c88",
+                    "function": "CopyFileW"
                 }
             ],
-            "api-ms-win-core-libraryloader-l1-2-1.dll": [
+            "api-ms-win-core-libraryloader-l1-2-0.dll": [
                 {
-                    "address": "0x180077e98",
-                    "function": "LoadLibraryW"
+                    "address": "0x180077dd0",
+                    "function": "FindResourceExW"
                 },
                 {
-                    "address": "0x180077ea0",
-                    "function": "FindResourceW"
+                    "address": "0x180077dd8",
+                    "function": "EnumResourceNamesExW"
                 },
                 {
-                    "address": "0x180077ea8",
-                    "function": "LoadLibraryA"
+                    "address": "0x180077de0",
+                    "function": "DisableThreadLibraryCalls"
+                },
+                {
+                    "address": "0x180077de8",
+                    "function": "GetProcAddress"
+                },
+                {
+                    "address": "0x180077df0",
+                    "function": "LoadLibraryExW"
+                },
+                {
+                    "address": "0x180077df8",
+                    "function": "FreeLibrary"
+                },
+                {
+                    "address": "0x180077e00",
+                    "function": "FreeLibraryAndExitThread"
+                },
+                {
+                    "address": "0x180077e08",
+                    "function": "FreeResource"
+                },
+                {
+                    "address": "0x180077e10",
+                    "function": "GetModuleFileNameA"
+                },
+                {
+                    "address": "0x180077e18",
+                    "function": "GetModuleFileNameW"
+                },
+                {
+                    "address": "0x180077e20",
+                    "function": "EnumResourceTypesExW"
+                },
+                {
+                    "address": "0x180077e28",
+                    "function": "GetModuleHandleW"
+                },
+                {
+                    "address": "0x180077e30",
+                    "function": "GetModuleHandleExA"
+                },
+                {
+                    "address": "0x180077e38",
+                    "function": "GetModuleHandleExW"
+                },
+                {
+                    "address": "0x180077e40",
+                    "function": "LoadLibraryExA"
+                },
+                {
+                    "address": "0x180077e48",
+                    "function": "LoadResource"
+                },
+                {
+                    "address": "0x180077e50",
+                    "function": "EnumResourceTypesExA"
+                },
+                {
+                    "address": "0x180077e58",
+                    "function": "EnumResourceNamesExA"
+                },
+                {
+                    "address": "0x180077e60",
+                    "function": "FindStringOrdinal"
+                },
+                {
+                    "address": "0x180077e68",
+                    "function": "EnumResourceLanguagesExW"
+                },
+                {
+                    "address": "0x180077e70",
+                    "function": "LockResource"
+                },
+                {
+                    "address": "0x180077e78",
+                    "function": "EnumResourceLanguagesExA"
+                },
+                {
+                    "address": "0x180077e80",
+                    "function": "SizeofResource"
+                },
+                {
+                    "address": "0x180077e88",
+                    "function": "GetModuleHandleA"
                 }
             ],
-            "api-ms-win-core-handle-l1-1-0.dll": [
+            "api-ms-win-core-realtime-l1-1-0.dll": [
                 {
-                    "address": "0x180077ca8",
-                    "function": "CloseHandle"
+                    "address": "0x180078790",
+                    "function": "QueryProcessCycleTime"
                 },
                 {
-                    "address": "0x180077cb0",
-                    "function": "DuplicateHandle"
+                    "address": "0x180078798",
+                    "function": "QueryIdleProcessorCycleTime"
                 },
                 {
-                    "address": "0x180077cb8",
-                    "function": "GetHandleInformation"
+                    "address": "0x1800787a0",
+                    "function": "QueryIdleProcessorCycleTimeEx"
                 },
                 {
-                    "address": "0x180077cc0",
-                    "function": "SetHandleInformation"
+                    "address": "0x1800787a8",
+                    "function": "QueryUnbiasedInterruptTime"
+                },
+                {
+                    "address": "0x1800787b0",
+                    "function": "QueryThreadCycleTime"
                 }
             ],
-            "api-ms-win-core-processthreads-l1-1-3.dll": [
+            "api-ms-win-core-util-l1-1-0.dll": [
                 {
-                    "address": "0x180078638",
-                    "function": "GetProcessInformation"
+                    "address": "0x180078d50",
+                    "function": "Beep"
+                }
+            ],
+            "api-ms-win-core-appcompat-l1-1-0.dll": [
+                {
+                    "address": "0x180077400",
+                    "function": "BaseUpdateAppcompatCache"
                 },
                 {
-                    "address": "0x180078640",
-                    "function": "SetProcessInformation"
+                    "address": "0x180077408",
+                    "function": "BaseFlushAppcompatCache"
                 },
                 {
-                    "address": "0x180078648",
-                    "function": "SetThreadIdealProcessor"
+                    "address": "0x180077410",
+                    "function": "BaseCheckAppcompatCacheEx"
                 },
                 {
-                    "address": "0x180078650",
-                    "function": "GetProcessShutdownParameters"
+                    "address": "0x180077418",
+                    "function": "BaseDumpAppcompatCache"
+                },
+                {
+                    "address": "0x180077420",
+                    "function": "BaseCheckAppcompatCache"
+                },
+                {
+                    "address": "0x180077428",
+                    "function": "BaseInitAppcompatCacheSupport"
+                },
+                {
+                    "address": "0x180077430",
+                    "function": "BaseCleanupAppcompatCacheSupport"
+                }
+            ],
+            "api-ms-win-core-delayload-l1-1-0.dll": [
+                {
+                    "address": "0x180077880",
+                    "function": "DelayLoadFailureHook"
+                }
+            ],
+            "api-ms-win-eventing-provider-l1-1-0.dll": [
+                {
+                    "address": "0x180078e78",
+                    "function": "EventRegister"
+                },
+                {
+                    "address": "0x180078e80",
+                    "function": "EventUnregister"
+                },
+                {
+                    "address": "0x180078e88",
+                    "function": "EventWriteTransfer"
+                },
+                {
+                    "address": "0x180078e90",
+                    "function": "EventSetInformation"
+                }
+            ],
+            "api-ms-win-core-file-l1-2-1.dll": [
+                {
+                    "address": "0x180077bb8",
+                    "function": "GetCompressedFileSizeW"
+                },
+                {
+                    "address": "0x180077bc0",
+                    "function": "SetFileIoOverlappedRange"
+                },
+                {
+                    "address": "0x180077bc8",
+                    "function": "GetCompressedFileSizeA"
+                }
+            ],
+            "api-ms-win-core-synch-l1-1-0.dll": [
+                {
+                    "address": "0x180078a30",
+                    "function": "CreateWaitableTimerExW"
+                },
+                {
+                    "address": "0x180078a38",
+                    "function": "CreateSemaphoreExW"
+                },
+                {
+                    "address": "0x180078a40",
+                    "function": "CreateMutexW"
+                },
+                {
+                    "address": "0x180078a48",
+                    "function": "InitializeCriticalSectionEx"
+                },
+                {
+                    "address": "0x180078a50",
+                    "function": "OpenEventA"
+                },
+                {
+                    "address": "0x180078a58",
+                    "function": "OpenEventW"
+                },
+                {
+                    "address": "0x180078a60",
+                    "function": "OpenMutexW"
+                },
+                {
+                    "address": "0x180078a68",
+                    "function": "OpenSemaphoreW"
+                },
+                {
+                    "address": "0x180078a70",
+                    "function": "OpenWaitableTimerW"
+                },
+                {
+                    "address": "0x180078a78",
+                    "function": "ReleaseMutex"
+                },
+                {
+                    "address": "0x180078a80",
+                    "function": "ReleaseSemaphore"
+                },
+                {
+                    "address": "0x180078a88",
+                    "function": "ResetEvent"
+                },
+                {
+                    "address": "0x180078a90",
+                    "function": "SetEvent"
+                },
+                {
+                    "address": "0x180078a98",
+                    "function": "SetWaitableTimer"
+                },
+                {
+                    "address": "0x180078aa0",
+                    "function": "SleepEx"
+                },
+                {
+                    "address": "0x180078aa8",
+                    "function": "DeleteCriticalSection"
+                },
+                {
+                    "address": "0x180078ab0",
+                    "function": "WaitForMultipleObjectsEx"
+                },
+                {
+                    "address": "0x180078ab8",
+                    "function": "CreateMutexExW"
+                },
+                {
+                    "address": "0x180078ac0",
+                    "function": "CreateMutexExA"
+                },
+                {
+                    "address": "0x180078ac8",
+                    "function": "CancelWaitableTimer"
+                },
+                {
+                    "address": "0x180078ad0",
+                    "function": "CreateMutexA"
+                },
+                {
+                    "address": "0x180078ad8",
+                    "function": "CreateEventW"
+                },
+                {
+                    "address": "0x180078ae0",
+                    "function": "CreateEventExW"
+                },
+                {
+                    "address": "0x180078ae8",
+                    "function": "CreateEventExA"
+                },
+                {
+                    "address": "0x180078af0",
+                    "function": "CreateEventA"
+                },
+                {
+                    "address": "0x180078af8",
+                    "function": "InitializeCriticalSectionAndSpinCount"
+                },
+                {
+                    "address": "0x180078b00",
+                    "function": "WaitForSingleObject"
+                },
+                {
+                    "address": "0x180078b08",
+                    "function": "WaitForSingleObjectEx"
+                },
+                {
+                    "address": "0x180078b10",
+                    "function": "InitializeCriticalSection"
+                },
+                {
+                    "address": "0x180078b18",
+                    "function": "LeaveCriticalSection"
+                },
+                {
+                    "address": "0x180078b20",
+                    "function": "EnterCriticalSection"
+                }
+            ],
+            "api-ms-win-core-localization-l1-2-0.dll": [
+                {
+                    "address": "0x180077ed8",
+                    "function": "SetCalendarInfoW"
+                },
+                {
+                    "address": "0x180077ee0",
+                    "function": "SetLocaleInfoW"
+                },
+                {
+                    "address": "0x180077ee8",
+                    "function": "GetNLSVersion"
+                },
+                {
+                    "address": "0x180077ef0",
+                    "function": "LCMapStringW"
+                },
+                {
+                    "address": "0x180077ef8",
+                    "function": "ResolveLocaleName"
+                },
+                {
+                    "address": "0x180077f00",
+                    "function": "VerLanguageNameW"
+                },
+                {
+                    "address": "0x180077f08",
+                    "function": "LocaleNameToLCID"
+                },
+                {
+                    "address": "0x180077f10",
+                    "function": "LCMapStringEx"
+                },
+                {
+                    "address": "0x180077f18",
+                    "function": "ConvertDefaultLocale"
+                },
+                {
+                    "address": "0x180077f20",
+                    "function": "IsValidLocaleName"
+                },
+                {
+                    "address": "0x180077f28",
+                    "function": "IdnToUnicode"
+                },
+                {
+                    "address": "0x180077f30",
+                    "function": "IdnToAscii"
+                },
+                {
+                    "address": "0x180077f38",
+                    "function": "GetUserPreferredUILanguages"
+                },
+                {
+                    "address": "0x180077f40",
+                    "function": "SetThreadLocale"
+                },
+                {
+                    "address": "0x180077f48",
+                    "function": "GetUILanguageInfo"
+                },
+                {
+                    "address": "0x180077f50",
+                    "function": "FindNLSStringEx"
+                },
+                {
+                    "address": "0x180077f58",
+                    "function": "GetFileMUIInfo"
+                },
+                {
+                    "address": "0x180077f60",
+                    "function": "GetThreadUILanguage"
+                },
+                {
+                    "address": "0x180077f68",
+                    "function": "SetProcessPreferredUILanguages"
+                },
+                {
+                    "address": "0x180077f70",
+                    "function": "GetThreadPreferredUILanguages"
+                },
+                {
+                    "address": "0x180077f78",
+                    "function": "GetSystemPreferredUILanguages"
+                },
+                {
+                    "address": "0x180077f80",
+                    "function": "GetFileMUIPath"
+                },
+                {
+                    "address": "0x180077f88",
+                    "function": "GetCalendarInfoEx"
+                },
+                {
+                    "address": "0x180077f90",
+                    "function": "GetNLSVersionEx"
+                },
+                {
+                    "address": "0x180077f98",
+                    "function": "IsDBCSLeadByte"
+                },
+                {
+                    "address": "0x180077fa0",
+                    "function": "IsDBCSLeadByteEx"
+                },
+                {
+                    "address": "0x180077fa8",
+                    "function": "GetLocaleInfoEx"
+                },
+                {
+                    "address": "0x180077fb0",
+                    "function": "IsNLSDefinedString"
+                },
+                {
+                    "address": "0x180077fb8",
+                    "function": "IsValidCodePage"
+                },
+                {
+                    "address": "0x180077fc0",
+                    "function": "IsValidLanguageGroup"
+                },
+                {
+                    "address": "0x180077fc8",
+                    "function": "IsValidLocale"
+                },
+                {
+                    "address": "0x180077fd0",
+                    "function": "LCMapStringA"
+                },
+                {
+                    "address": "0x180077fd8",
+                    "function": "GetUserDefaultLCID"
+                },
+                {
+                    "address": "0x180077fe0",
+                    "function": "GetUserDefaultLangID"
+                },
+                {
+                    "address": "0x180077fe8",
+                    "function": "GetThreadLocale"
+                },
+                {
+                    "address": "0x180077ff0",
+                    "function": "GetSystemDefaultLCID"
+                },
+                {
+                    "address": "0x180077ff8",
+                    "function": "GetSystemDefaultLangID"
+                },
+                {
+                    "address": "0x180078000",
+                    "function": "GetProcessPreferredUILanguages"
+                },
+                {
+                    "address": "0x180078008",
+                    "function": "GetOEMCP"
+                },
+                {
+                    "address": "0x180078010",
+                    "function": "GetLocaleInfoW"
+                },
+                {
+                    "address": "0x180078018",
+                    "function": "GetLocaleInfoA"
+                },
+                {
+                    "address": "0x180078020",
+                    "function": "SetThreadUILanguage"
+                },
+                {
+                    "address": "0x180078028",
+                    "function": "SetThreadPreferredUILanguages"
+                },
+                {
+                    "address": "0x180078030",
+                    "function": "IsValidNLSVersion"
+                },
+                {
+                    "address": "0x180078038",
+                    "function": "GetCalendarInfoW"
+                },
+                {
+                    "address": "0x180078040",
+                    "function": "GetCPInfoExW"
+                },
+                {
+                    "address": "0x180078048",
+                    "function": "GetCPInfo"
+                },
+                {
+                    "address": "0x180078050",
+                    "function": "GetACP"
+                },
+                {
+                    "address": "0x180078058",
+                    "function": "FormatMessageW"
+                },
+                {
+                    "address": "0x180078060",
+                    "function": "FormatMessageA"
+                },
+                {
+                    "address": "0x180078068",
+                    "function": "FindNLSString"
+                },
+                {
+                    "address": "0x180078070",
+                    "function": "EnumSystemLocalesW"
+                },
+                {
+                    "address": "0x180078078",
+                    "function": "EnumSystemLocalesA"
+                },
+                {
+                    "address": "0x180078080",
+                    "function": "VerLanguageNameA"
+                }
+            ],
+            "api-ms-win-core-processenvironment-l1-2-0.dll": [
+                {
+                    "address": "0x1800783e8",
+                    "function": "SearchPathA"
+                },
+                {
+                    "address": "0x1800783f0",
+                    "function": "NeedCurrentDirectoryForExePathW"
+                },
+                {
+                    "address": "0x1800783f8",
+                    "function": "NeedCurrentDirectoryForExePathA"
+                }
+            ],
+            "api-ms-win-security-appcontainer-l1-1-0.dll": [
+                {
+                    "address": "0x180078ea0",
+                    "function": "GetAppContainerNamedObjectPath"
+                }
+            ],
+            "api-ms-win-core-memory-l1-1-2.dll": [
+                {
+                    "address": "0x180078218",
+                    "function": "FreeUserPhysicalPages"
+                },
+                {
+                    "address": "0x180078220",
+                    "function": "MapUserPhysicalPages"
+                },
+                {
+                    "address": "0x180078228",
+                    "function": "AllocateUserPhysicalPagesNuma"
+                },
+                {
+                    "address": "0x180078230",
+                    "function": "RegisterBadMemoryNotification"
+                },
+                {
+                    "address": "0x180078238",
+                    "function": "UnregisterBadMemoryNotification"
+                },
+                {
+                    "address": "0x180078240",
+                    "function": "GetMemoryErrorHandlingCapabilities"
+                },
+                {
+                    "address": "0x180078248",
+                    "function": "AllocateUserPhysicalPages"
+                },
+                {
+                    "address": "0x180078250",
+                    "function": "VirtualAllocExNuma"
+                }
+            ],
+            "api-ms-win-core-namespace-l1-1-0.dll": [
+                {
+                    "address": "0x1800782d0",
+                    "function": "CreateBoundaryDescriptorW"
+                },
+                {
+                    "address": "0x1800782d8",
+                    "function": "AddSIDToBoundaryDescriptor"
+                },
+                {
+                    "address": "0x1800782e0",
+                    "function": "CreatePrivateNamespaceW"
+                },
+                {
+                    "address": "0x1800782e8",
+                    "function": "DeleteBoundaryDescriptor"
+                },
+                {
+                    "address": "0x1800782f0",
+                    "function": "ClosePrivateNamespace"
+                },
+                {
+                    "address": "0x1800782f8",
+                    "function": "OpenPrivateNamespaceW"
+                }
+            ],
+            "api-ms-win-core-threadpool-private-l1-1-0.dll": [
+                {
+                    "address": "0x180078cf0",
+                    "function": "RegisterWaitForSingleObjectEx"
+                }
+            ],
+            "api-ms-win-core-io-l1-1-1.dll": [
+                {
+                    "address": "0x180077d98",
+                    "function": "CancelSynchronousIo"
+                },
+                {
+                    "address": "0x180077da0",
+                    "function": "CancelIo"
+                }
+            ],
+            "api-ms-win-core-console-l2-1-0.dll": [
+                {
+                    "address": "0x180077588",
+                    "function": "FlushConsoleInputBuffer"
+                },
+                {
+                    "address": "0x180077590",
+                    "function": "GenerateConsoleCtrlEvent"
+                },
+                {
+                    "address": "0x180077598",
+                    "function": "GetConsoleCursorInfo"
+                },
+                {
+                    "address": "0x1800775a0",
+                    "function": "FillConsoleOutputCharacterW"
+                },
+                {
+                    "address": "0x1800775a8",
+                    "function": "FillConsoleOutputCharacterA"
+                },
+                {
+                    "address": "0x1800775b0",
+                    "function": "FillConsoleOutputAttribute"
+                },
+                {
+                    "address": "0x1800775b8",
+                    "function": "WriteConsoleOutputCharacterA"
+                },
+                {
+                    "address": "0x1800775c0",
+                    "function": "GetConsoleScreenBufferInfo"
+                },
+                {
+                    "address": "0x1800775c8",
+                    "function": "GetConsoleScreenBufferInfoEx"
+                },
+                {
+                    "address": "0x1800775d0",
+                    "function": "WriteConsoleOutputCharacterW"
+                },
+                {
+                    "address": "0x1800775d8",
+                    "function": "CreateConsoleScreenBuffer"
+                },
+                {
+                    "address": "0x1800775e0",
+                    "function": "WriteConsoleOutputAttribute"
+                },
+                {
+                    "address": "0x1800775e8",
+                    "function": "WriteConsoleOutputW"
+                },
+                {
+                    "address": "0x1800775f0",
+                    "function": "ReadConsoleOutputA"
+                },
+                {
+                    "address": "0x1800775f8",
+                    "function": "ReadConsoleOutputAttribute"
+                },
+                {
+                    "address": "0x180077600",
+                    "function": "ReadConsoleOutputCharacterA"
+                },
+                {
+                    "address": "0x180077608",
+                    "function": "ReadConsoleOutputCharacterW"
+                },
+                {
+                    "address": "0x180077610",
+                    "function": "ReadConsoleOutputW"
+                },
+                {
+                    "address": "0x180077618",
+                    "function": "ScrollConsoleScreenBufferA"
+                },
+                {
+                    "address": "0x180077620",
+                    "function": "ScrollConsoleScreenBufferW"
+                },
+                {
+                    "address": "0x180077628",
+                    "function": "SetConsoleActiveScreenBuffer"
+                },
+                {
+                    "address": "0x180077630",
+                    "function": "GetLargestConsoleWindowSize"
+                },
+                {
+                    "address": "0x180077638",
+                    "function": "SetConsoleCP"
+                },
+                {
+                    "address": "0x180077640",
+                    "function": "SetConsoleCursorInfo"
+                },
+                {
+                    "address": "0x180077648",
+                    "function": "SetConsoleCursorPosition"
+                },
+                {
+                    "address": "0x180077650",
+                    "function": "SetConsoleOutputCP"
+                },
+                {
+                    "address": "0x180077658",
+                    "function": "SetConsoleScreenBufferInfoEx"
+                },
+                {
+                    "address": "0x180077660",
+                    "function": "SetConsoleScreenBufferSize"
+                },
+                {
+                    "address": "0x180077668",
+                    "function": "SetConsoleTextAttribute"
+                },
+                {
+                    "address": "0x180077670",
+                    "function": "WriteConsoleOutputA"
+                },
+                {
+                    "address": "0x180077678",
+                    "function": "WriteConsoleInputW"
+                },
+                {
+                    "address": "0x180077680",
+                    "function": "SetConsoleWindowInfo"
+                },
+                {
+                    "address": "0x180077688",
+                    "function": "WriteConsoleInputA"
                 }
             ],
             "api-ms-win-core-processthreads-l1-1-1.dll": [
@@ -13567,22 +14470,214 @@
                     "function": "FlushInstructionCache"
                 }
             ],
-            "api-ms-win-core-debug-l1-1-0.dll": [
+            "api-ms-win-core-file-l2-1-0.dll": [
                 {
-                    "address": "0x180077828",
-                    "function": "OutputDebugStringA"
+                    "address": "0x180077c10",
+                    "function": "ReadDirectoryChangesW"
                 },
                 {
-                    "address": "0x180077830",
-                    "function": "DebugBreak"
+                    "address": "0x180077c18",
+                    "function": "MoveFileWithProgressW"
                 },
                 {
-                    "address": "0x180077838",
-                    "function": "IsDebuggerPresent"
+                    "address": "0x180077c20",
+                    "function": "CreateHardLinkW"
                 },
                 {
-                    "address": "0x180077840",
-                    "function": "OutputDebugStringW"
+                    "address": "0x180077c28",
+                    "function": "CreateDirectoryExW"
+                },
+                {
+                    "address": "0x180077c30",
+                    "function": "ReOpenFile"
+                },
+                {
+                    "address": "0x180077c38",
+                    "function": "GetFileInformationByHandleEx"
+                },
+                {
+                    "address": "0x180077c40",
+                    "function": "CopyFile2"
+                },
+                {
+                    "address": "0x180077c48",
+                    "function": "CopyFileExW"
+                },
+                {
+                    "address": "0x180077c50",
+                    "function": "ReplaceFileW"
+                },
+                {
+                    "address": "0x180077c58",
+                    "function": "MoveFileExW"
+                },
+                {
+                    "address": "0x180077c60",
+                    "function": "CreateSymbolicLinkW"
+                }
+            ],
+            "api-ms-win-core-sysinfo-l1-2-0.dll": [
+                {
+                    "address": "0x180078c08",
+                    "function": "SetComputerNameExW"
+                },
+                {
+                    "address": "0x180078c10",
+                    "function": "SetSystemTime"
+                },
+                {
+                    "address": "0x180078c18",
+                    "function": "GetProductInfo"
+                },
+                {
+                    "address": "0x180078c20",
+                    "function": "GetNativeSystemInfo"
+                },
+                {
+                    "address": "0x180078c28",
+                    "function": "GetSystemFirmwareTable"
+                },
+                {
+                    "address": "0x180078c30",
+                    "function": "EnumSystemFirmwareTables"
+                },
+                {
+                    "address": "0x180078c38",
+                    "function": "GetSystemTimePreciseAsFileTime"
+                }
+            ],
+            "api-ms-win-core-job-l1-1-0.dll": [
+                {
+                    "address": "0x180077db0",
+                    "function": "IsProcessInJob"
+                }
+            ],
+            "api-ms-win-core-memory-l1-1-1.dll": [
+                {
+                    "address": "0x1800781b0",
+                    "function": "QueryMemoryResourceNotification"
+                },
+                {
+                    "address": "0x1800781b8",
+                    "function": "CreateMemoryResourceNotification"
+                },
+                {
+                    "address": "0x1800781c0",
+                    "function": "GetLargePageMinimum"
+                },
+                {
+                    "address": "0x1800781c8",
+                    "function": "GetProcessWorkingSetSizeEx"
+                },
+                {
+                    "address": "0x1800781d0",
+                    "function": "GetSystemFileCacheSize"
+                },
+                {
+                    "address": "0x1800781d8",
+                    "function": "SetProcessWorkingSetSizeEx"
+                },
+                {
+                    "address": "0x1800781e0",
+                    "function": "SetSystemFileCacheSize"
+                },
+                {
+                    "address": "0x1800781e8",
+                    "function": "VirtualLock"
+                },
+                {
+                    "address": "0x1800781f0",
+                    "function": "VirtualUnlock"
+                },
+                {
+                    "address": "0x1800781f8",
+                    "function": "ResetWriteWatch"
+                },
+                {
+                    "address": "0x180078200",
+                    "function": "GetWriteWatch"
+                },
+                {
+                    "address": "0x180078208",
+                    "function": "CreateFileMappingNumaW"
+                }
+            ],
+            "api-ms-win-core-windowserrorreporting-l1-1-2.dll": [
+                {
+                    "address": "0x180078de0",
+                    "function": "WerUnregisterAppLocalDump"
+                },
+                {
+                    "address": "0x180078de8",
+                    "function": "WerRegisterAppLocalDump"
+                }
+            ],
+            "api-ms-win-core-systemtopology-l1-1-1.dll": [
+                {
+                    "address": "0x180078ca0",
+                    "function": "GetNumaProximityNodeEx"
+                }
+            ],
+            "api-ms-win-core-threadpool-legacy-l1-1-0.dll": [
+                {
+                    "address": "0x180078cb0",
+                    "function": "UnregisterWaitEx"
+                },
+                {
+                    "address": "0x180078cb8",
+                    "function": "ChangeTimerQueueTimer"
+                },
+                {
+                    "address": "0x180078cc0",
+                    "function": "CreateTimerQueue"
+                },
+                {
+                    "address": "0x180078cc8",
+                    "function": "DeleteTimerQueueEx"
+                },
+                {
+                    "address": "0x180078cd0",
+                    "function": "DeleteTimerQueueTimer"
+                },
+                {
+                    "address": "0x180078cd8",
+                    "function": "CreateTimerQueueTimer"
+                },
+                {
+                    "address": "0x180078ce0",
+                    "function": "QueueUserWorkItem"
+                }
+            ],
+            "api-ms-win-core-synch-l1-2-1.dll": [
+                {
+                    "address": "0x180078b60",
+                    "function": "WaitForMultipleObjects"
+                },
+                {
+                    "address": "0x180078b68",
+                    "function": "CreateSemaphoreW"
+                }
+            ],
+            "api-ms-win-core-normalization-l1-1-0.dll": [
+                {
+                    "address": "0x180078308",
+                    "function": "IdnToNameprepUnicode"
+                },
+                {
+                    "address": "0x180078310",
+                    "function": "GetStringScripts"
+                },
+                {
+                    "address": "0x180078318",
+                    "function": "NormalizeString"
+                },
+                {
+                    "address": "0x180078320",
+                    "function": "VerifyScripts"
+                },
+                {
+                    "address": "0x180078328",
+                    "function": "IsNormalizedString"
                 }
             ],
             "api-ms-win-core-processenvironment-l1-1-0.dll": [
@@ -13671,290 +14766,26 @@
                     "function": "FreeEnvironmentStringsA"
                 }
             ],
-            "api-ms-win-core-file-l1-1-0.dll": [
+            "api-ms-win-security-base-l1-1-0.dll": [
                 {
-                    "address": "0x180077958",
-                    "function": "DeleteFileA"
+                    "address": "0x180078eb0",
+                    "function": "DuplicateToken"
                 },
                 {
-                    "address": "0x180077960",
-                    "function": "FindFirstFileExA"
+                    "address": "0x180078eb8",
+                    "function": "FreeSid"
                 },
                 {
-                    "address": "0x180077968",
-                    "function": "DeleteFileW"
+                    "address": "0x180078ec0",
+                    "function": "AccessCheck"
                 },
                 {
-                    "address": "0x180077970",
-                    "function": "DeleteVolumeMountPointW"
+                    "address": "0x180078ec8",
+                    "function": "EqualSid"
                 },
                 {
-                    "address": "0x180077978",
-                    "function": "FileTimeToLocalFileTime"
-                },
-                {
-                    "address": "0x180077980",
-                    "function": "DefineDosDeviceW"
-                },
-                {
-                    "address": "0x180077988",
-                    "function": "FindCloseChangeNotification"
-                },
-                {
-                    "address": "0x180077990",
-                    "function": "GetDriveTypeA"
-                },
-                {
-                    "address": "0x180077998",
-                    "function": "FindFirstChangeNotificationW"
-                },
-                {
-                    "address": "0x1800779a0",
-                    "function": "CreateFileW"
-                },
-                {
-                    "address": "0x1800779a8",
-                    "function": "GetFileAttributesA"
-                },
-                {
-                    "address": "0x1800779b0",
-                    "function": "GetFileAttributesExA"
-                },
-                {
-                    "address": "0x1800779b8",
-                    "function": "GetFileAttributesExW"
-                },
-                {
-                    "address": "0x1800779c0",
-                    "function": "GetFileAttributesW"
-                },
-                {
-                    "address": "0x1800779c8",
-                    "function": "GetFileInformationByHandle"
-                },
-                {
-                    "address": "0x1800779d0",
-                    "function": "GetFileSize"
-                },
-                {
-                    "address": "0x1800779d8",
-                    "function": "GetFileSizeEx"
-                },
-                {
-                    "address": "0x1800779e0",
-                    "function": "GetFileTime"
-                },
-                {
-                    "address": "0x1800779e8",
-                    "function": "GetFileType"
-                },
-                {
-                    "address": "0x1800779f0",
-                    "function": "GetFinalPathNameByHandleA"
-                },
-                {
-                    "address": "0x1800779f8",
-                    "function": "CreateFileA"
-                },
-                {
-                    "address": "0x180077a00",
-                    "function": "CreateDirectoryW"
-                },
-                {
-                    "address": "0x180077a08",
-                    "function": "CreateDirectoryA"
-                },
-                {
-                    "address": "0x180077a10",
-                    "function": "CompareFileTime"
-                },
-                {
-                    "address": "0x180077a18",
-                    "function": "GetDiskFreeSpaceW"
-                },
-                {
-                    "address": "0x180077a20",
-                    "function": "FindFirstFileExW"
-                },
-                {
-                    "address": "0x180077a28",
-                    "function": "FindFirstFileA"
-                },
-                {
-                    "address": "0x180077a30",
-                    "function": "GetDriveTypeW"
-                },
-                {
-                    "address": "0x180077a38",
-                    "function": "FindFirstFileW"
-                },
-                {
-                    "address": "0x180077a40",
-                    "function": "FindFirstVolumeW"
-                },
-                {
-                    "address": "0x180077a48",
-                    "function": "FindNextChangeNotification"
-                },
-                {
-                    "address": "0x180077a50",
-                    "function": "FindNextFileA"
-                },
-                {
-                    "address": "0x180077a58",
-                    "function": "FindNextFileW"
-                },
-                {
-                    "address": "0x180077a60",
-                    "function": "FindNextVolumeW"
-                },
-                {
-                    "address": "0x180077a68",
-                    "function": "FindVolumeClose"
-                },
-                {
-                    "address": "0x180077a70",
-                    "function": "FlushFileBuffers"
-                },
-                {
-                    "address": "0x180077a78",
-                    "function": "GetDiskFreeSpaceA"
-                },
-                {
-                    "address": "0x180077a80",
-                    "function": "GetDiskFreeSpaceExA"
-                },
-                {
-                    "address": "0x180077a88",
-                    "function": "FindClose"
-                },
-                {
-                    "address": "0x180077a90",
-                    "function": "GetDiskFreeSpaceExW"
-                },
-                {
-                    "address": "0x180077a98",
-                    "function": "LockFileEx"
-                },
-                {
-                    "address": "0x180077aa0",
-                    "function": "QueryDosDeviceW"
-                },
-                {
-                    "address": "0x180077aa8",
-                    "function": "ReadFile"
-                },
-                {
-                    "address": "0x180077ab0",
-                    "function": "LockFile"
-                },
-                {
-                    "address": "0x180077ab8",
-                    "function": "LocalFileTimeToFileTime"
-                },
-                {
-                    "address": "0x180077ac0",
-                    "function": "GetVolumePathNameW"
-                },
-                {
-                    "address": "0x180077ac8",
-                    "function": "GetVolumeInformationW"
-                },
-                {
-                    "address": "0x180077ad0",
-                    "function": "GetVolumeInformationByHandleW"
-                },
-                {
-                    "address": "0x180077ad8",
-                    "function": "ReadFileEx"
-                },
-                {
-                    "address": "0x180077ae0",
-                    "function": "ReadFileScatter"
-                },
-                {
-                    "address": "0x180077ae8",
-                    "function": "GetTempFileNameW"
-                },
-                {
-                    "address": "0x180077af0",
-                    "function": "RemoveDirectoryA"
-                },
-                {
-                    "address": "0x180077af8",
-                    "function": "RemoveDirectoryW"
-                },
-                {
-                    "address": "0x180077b00",
-                    "function": "SetEndOfFile"
-                },
-                {
-                    "address": "0x180077b08",
-                    "function": "GetLogicalDriveStringsW"
-                },
-                {
-                    "address": "0x180077b10",
-                    "function": "GetFullPathNameW"
-                },
-                {
-                    "address": "0x180077b18",
-                    "function": "GetFullPathNameA"
-                },
-                {
-                    "address": "0x180077b20",
-                    "function": "SetFileAttributesA"
-                },
-                {
-                    "address": "0x180077b28",
-                    "function": "SetFileAttributesW"
-                },
-                {
-                    "address": "0x180077b30",
-                    "function": "SetFileInformationByHandle"
-                },
-                {
-                    "address": "0x180077b38",
-                    "function": "SetFilePointer"
-                },
-                {
-                    "address": "0x180077b40",
-                    "function": "SetFilePointerEx"
-                },
-                {
-                    "address": "0x180077b48",
-                    "function": "SetFileTime"
-                },
-                {
-                    "address": "0x180077b50",
-                    "function": "SetFileValidData"
-                },
-                {
-                    "address": "0x180077b58",
-                    "function": "UnlockFile"
-                },
-                {
-                    "address": "0x180077b60",
-                    "function": "FindFirstChangeNotificationA"
-                },
-                {
-                    "address": "0x180077b68",
-                    "function": "GetFinalPathNameByHandleW"
-                },
-                {
-                    "address": "0x180077b70",
-                    "function": "UnlockFileEx"
-                },
-                {
-                    "address": "0x180077b78",
-                    "function": "WriteFile"
-                },
-                {
-                    "address": "0x180077b80",
-                    "function": "WriteFileEx"
-                },
-                {
-                    "address": "0x180077b88",
-                    "function": "WriteFileGather"
+                    "address": "0x180078ed0",
+                    "function": "AllocateAndInitializeSid"
                 }
             ],
             "api-ms-win-core-localization-l2-1-0.dll": [
@@ -14003,88 +14834,130 @@
                     "function": "EnumCalendarInfoExW"
                 }
             ],
-            "api-ms-win-core-memory-l1-1-1.dll": [
+            "api-ms-win-core-debug-l1-1-0.dll": [
                 {
-                    "address": "0x1800781b0",
-                    "function": "QueryMemoryResourceNotification"
+                    "address": "0x180077828",
+                    "function": "OutputDebugStringA"
                 },
                 {
-                    "address": "0x1800781b8",
-                    "function": "CreateMemoryResourceNotification"
+                    "address": "0x180077830",
+                    "function": "DebugBreak"
                 },
                 {
-                    "address": "0x1800781c0",
-                    "function": "GetLargePageMinimum"
+                    "address": "0x180077838",
+                    "function": "IsDebuggerPresent"
                 },
                 {
-                    "address": "0x1800781c8",
-                    "function": "GetProcessWorkingSetSizeEx"
-                },
-                {
-                    "address": "0x1800781d0",
-                    "function": "GetSystemFileCacheSize"
-                },
-                {
-                    "address": "0x1800781d8",
-                    "function": "SetProcessWorkingSetSizeEx"
-                },
-                {
-                    "address": "0x1800781e0",
-                    "function": "SetSystemFileCacheSize"
-                },
-                {
-                    "address": "0x1800781e8",
-                    "function": "VirtualLock"
-                },
-                {
-                    "address": "0x1800781f0",
-                    "function": "VirtualUnlock"
-                },
-                {
-                    "address": "0x1800781f8",
-                    "function": "ResetWriteWatch"
-                },
-                {
-                    "address": "0x180078200",
-                    "function": "GetWriteWatch"
-                },
-                {
-                    "address": "0x180078208",
-                    "function": "CreateFileMappingNumaW"
-                }
-            ],
-            "api-ms-win-core-errorhandling-l1-1-3.dll": [
-                {
-                    "address": "0x1800778d0",
-                    "function": "SetThreadErrorMode"
-                },
-                {
-                    "address": "0x1800778d8",
-                    "function": "GetThreadErrorMode"
-                }
-            ],
-            "api-ms-win-eventing-provider-l1-1-0.dll": [
-                {
-                    "address": "0x180078e78",
-                    "function": "EventRegister"
-                },
-                {
-                    "address": "0x180078e80",
-                    "function": "EventUnregister"
-                },
-                {
-                    "address": "0x180078e88",
-                    "function": "EventWriteTransfer"
-                },
-                {
-                    "address": "0x180078e90",
-                    "function": "EventSetInformation"
+                    "address": "0x180077840",
+                    "function": "OutputDebugStringW"
                 }
             ],
             "api-ms-win-core-heap-l2-1-0.dll": [
                 {
                     "address": "0x180077d48",
                     "function": "LocalFree"
+                }
+            ],
+            "api-ms-win-core-synch-l1-2-0.dll": [
+                {
+                    "address": "0x180078b30",
+                    "function": "InitOnceExecuteOnce"
+                },
+                {
+                    "address": "0x180078b38",
+                    "function": "InitializeSynchronizationBarrier"
+                },
+                {
+                    "address": "0x180078b40",
+                    "function": "SignalObjectAndWait"
+                },
+                {
+                    "address": "0x180078b48",
+                    "function": "DeleteSynchronizationBarrier"
+                },
+                {
+                    "address": "0x180078b50",
+                    "function": "EnterSynchronizationBarrier"
+                }
+            ],
+            "api-ms-win-core-comm-l1-1-0.dll": [
+                {
+                    "address": "0x180077458",
+                    "function": "GetCommTimeouts"
+                },
+                {
+                    "address": "0x180077460",
+                    "function": "PurgeComm"
+                },
+                {
+                    "address": "0x180077468",
+                    "function": "SetCommBreak"
+                },
+                {
+                    "address": "0x180077470",
+                    "function": "GetCommProperties"
+                },
+                {
+                    "address": "0x180077478",
+                    "function": "SetCommMask"
+                },
+                {
+                    "address": "0x180077480",
+                    "function": "SetCommState"
+                },
+                {
+                    "address": "0x180077488",
+                    "function": "SetCommTimeouts"
+                },
+                {
+                    "address": "0x180077490",
+                    "function": "SetupComm"
+                },
+                {
+                    "address": "0x180077498",
+                    "function": "TransmitCommChar"
+                },
+                {
+                    "address": "0x1800774a0",
+                    "function": "WaitCommEvent"
+                },
+                {
+                    "address": "0x1800774a8",
+                    "function": "GetCommModemStatus"
+                },
+                {
+                    "address": "0x1800774b0",
+                    "function": "GetCommMask"
+                },
+                {
+                    "address": "0x1800774b8",
+                    "function": "GetCommConfig"
+                },
+                {
+                    "address": "0x1800774c0",
+                    "function": "EscapeCommFunction"
+                },
+                {
+                    "address": "0x1800774c8",
+                    "function": "ClearCommError"
+                },
+                {
+                    "address": "0x1800774d0",
+                    "function": "ClearCommBreak"
+                },
+                {
+                    "address": "0x1800774d8",
+                    "function": "GetCommState"
+                },
+                {
+                    "address": "0x1800774e0",
+                    "function": "SetCommConfig"
+                }
+            ],
+            "api-ms-win-core-libraryloader-l2-1-0.dll": [
+                {
+                    "address": "0x180077ec8",
+                    "function": "LoadPackagedLibrary"
                 }
             ],
             "api-ms-win-core-wow64-l1-1-1.dll": [
@@ -14103,6 +14976,704 @@
                 {
                     "address": "0x180078e30",
                     "function": "GetSystemWow64DirectoryA"
+                }
+            ],
+            "api-ms-win-core-file-l2-1-3.dll": [
+                {
+                    "address": "0x180077c98",
+                    "function": "ReadDirectoryChangesExW"
+                }
+            ],
+            "api-ms-win-core-appcompat-l1-1-1.dll": [
+                {
+                    "address": "0x180077440",
+                    "function": "BaseFreeAppCompatDataForProcess"
+                },
+                {
+                    "address": "0x180077448",
+                    "function": "BaseReadAppCompatDataForProcess"
+                }
+            ],
+            "api-ms-win-core-registry-l1-1-0.dll": [
+                {
+                    "address": "0x1800787c0",
+                    "function": "RegLoadMUIStringW"
+                },
+                {
+                    "address": "0x1800787c8",
+                    "function": "RegLoadMUIStringA"
+                },
+                {
+                    "address": "0x1800787d0",
+                    "function": "RegNotifyChangeKeyValue"
+                },
+                {
+                    "address": "0x1800787d8",
+                    "function": "RegLoadKeyA"
+                },
+                {
+                    "address": "0x1800787e0",
+                    "function": "RegGetValueA"
+                },
+                {
+                    "address": "0x1800787e8",
+                    "function": "RegFlushKey"
+                },
+                {
+                    "address": "0x1800787f0",
+                    "function": "RegEnumValueW"
+                },
+                {
+                    "address": "0x1800787f8",
+                    "function": "RegEnumValueA"
+                },
+                {
+                    "address": "0x180078800",
+                    "function": "RegOpenCurrentUser"
+                },
+                {
+                    "address": "0x180078808",
+                    "function": "RegGetKeySecurity"
+                },
+                {
+                    "address": "0x180078810",
+                    "function": "RegOpenKeyExA"
+                },
+                {
+                    "address": "0x180078818",
+                    "function": "RegEnumKeyExW"
+                },
+                {
+                    "address": "0x180078820",
+                    "function": "RegLoadKeyW"
+                },
+                {
+                    "address": "0x180078828",
+                    "function": "RegOpenKeyExW"
+                },
+                {
+                    "address": "0x180078830",
+                    "function": "RegGetValueW"
+                },
+                {
+                    "address": "0x180078838",
+                    "function": "RegCloseKey"
+                },
+                {
+                    "address": "0x180078840",
+                    "function": "RegCopyTreeW"
+                },
+                {
+                    "address": "0x180078848",
+                    "function": "RegCreateKeyExA"
+                },
+                {
+                    "address": "0x180078850",
+                    "function": "RegCreateKeyExW"
+                },
+                {
+                    "address": "0x180078858",
+                    "function": "RegDeleteKeyExA"
+                },
+                {
+                    "address": "0x180078860",
+                    "function": "RegDeleteKeyExW"
+                },
+                {
+                    "address": "0x180078868",
+                    "function": "RegDeleteTreeA"
+                },
+                {
+                    "address": "0x180078870",
+                    "function": "RegDeleteTreeW"
+                },
+                {
+                    "address": "0x180078878",
+                    "function": "RegDeleteValueA"
+                },
+                {
+                    "address": "0x180078880",
+                    "function": "RegDeleteValueW"
+                },
+                {
+                    "address": "0x180078888",
+                    "function": "RegDisablePredefinedCacheEx"
+                },
+                {
+                    "address": "0x180078890",
+                    "function": "RegOpenUserClassesRoot"
+                },
+                {
+                    "address": "0x180078898",
+                    "function": "RegLoadAppKeyW"
+                },
+                {
+                    "address": "0x1800788a0",
+                    "function": "RegUnLoadKeyW"
+                },
+                {
+                    "address": "0x1800788a8",
+                    "function": "RegUnLoadKeyA"
+                },
+                {
+                    "address": "0x1800788b0",
+                    "function": "RegSetValueExW"
+                },
+                {
+                    "address": "0x1800788b8",
+                    "function": "RegSetValueExA"
+                },
+                {
+                    "address": "0x1800788c0",
+                    "function": "RegSetKeySecurity"
+                },
+                {
+                    "address": "0x1800788c8",
+                    "function": "RegSaveKeyExW"
+                },
+                {
+                    "address": "0x1800788d0",
+                    "function": "RegSaveKeyExA"
+                },
+                {
+                    "address": "0x1800788d8",
+                    "function": "RegRestoreKeyW"
+                },
+                {
+                    "address": "0x1800788e0",
+                    "function": "RegRestoreKeyA"
+                },
+                {
+                    "address": "0x1800788e8",
+                    "function": "RegQueryValueExW"
+                },
+                {
+                    "address": "0x1800788f0",
+                    "function": "RegQueryValueExA"
+                },
+                {
+                    "address": "0x1800788f8",
+                    "function": "RegQueryInfoKeyW"
+                },
+                {
+                    "address": "0x180078900",
+                    "function": "RegQueryInfoKeyA"
+                },
+                {
+                    "address": "0x180078908",
+                    "function": "RegEnumKeyExA"
+                }
+            ],
+            "api-ms-win-core-processsnapshot-l1-1-0.dll": [
+                {
+                    "address": "0x180078408",
+                    "function": "PssWalkMarkerSeekToBeginning"
+                },
+                {
+                    "address": "0x180078410",
+                    "function": "PssWalkMarkerSetPosition"
+                },
+                {
+                    "address": "0x180078418",
+                    "function": "PssCaptureSnapshot"
+                },
+                {
+                    "address": "0x180078420",
+                    "function": "PssWalkMarkerGetPosition"
+                },
+                {
+                    "address": "0x180078428",
+                    "function": "PssWalkMarkerFree"
+                },
+                {
+                    "address": "0x180078430",
+                    "function": "PssFreeSnapshot"
+                },
+                {
+                    "address": "0x180078438",
+                    "function": "PssWalkMarkerCreate"
+                },
+                {
+                    "address": "0x180078440",
+                    "function": "PssDuplicateSnapshot"
+                },
+                {
+                    "address": "0x180078448",
+                    "function": "PssWalkSnapshot"
+                },
+                {
+                    "address": "0x180078450",
+                    "function": "PssQuerySnapshot"
+                }
+            ],
+            "api-ms-win-core-fibers-l2-1-0.dll": [
+                {
+                    "address": "0x180077910",
+                    "function": "ConvertThreadToFiber"
+                },
+                {
+                    "address": "0x180077918",
+                    "function": "SwitchToFiber"
+                },
+                {
+                    "address": "0x180077920",
+                    "function": "CreateFiber"
+                },
+                {
+                    "address": "0x180077928",
+                    "function": "DeleteFiber"
+                },
+                {
+                    "address": "0x180077930",
+                    "function": "ConvertFiberToThread"
+                }
+            ],
+            "api-ms-win-core-errorhandling-l1-1-3.dll": [
+                {
+                    "address": "0x1800778d0",
+                    "function": "SetThreadErrorMode"
+                },
+                {
+                    "address": "0x1800778d8",
+                    "function": "GetThreadErrorMode"
+                }
+            ],
+            "api-ms-win-core-handle-l1-1-0.dll": [
+                {
+                    "address": "0x180077ca8",
+                    "function": "CloseHandle"
+                },
+                {
+                    "address": "0x180077cb0",
+                    "function": "DuplicateHandle"
+                },
+                {
+                    "address": "0x180077cb8",
+                    "function": "GetHandleInformation"
+                },
+                {
+                    "address": "0x180077cc0",
+                    "function": "SetHandleInformation"
+                }
+            ],
+            "api-ms-win-core-file-l1-2-0.dll": [
+                {
+                    "address": "0x180077b98",
+                    "function": "CreateFile2"
+                },
+                {
+                    "address": "0x180077ba0",
+                    "function": "GetVolumePathNamesForVolumeNameW"
+                },
+                {
+                    "address": "0x180077ba8",
+                    "function": "GetTempPathW"
+                }
+            ],
+            "api-ms-win-core-processthreads-l1-1-2.dll": [
+                {
+                    "address": "0x180078600",
+                    "function": "GetThreadIOPendingFlag"
+                },
+                {
+                    "address": "0x180078608",
+                    "function": "SetThreadInformation"
+                },
+                {
+                    "address": "0x180078610",
+                    "function": "GetSystemTimes"
+                },
+                {
+                    "address": "0x180078618",
+                    "function": "GetThreadInformation"
+                },
+                {
+                    "address": "0x180078620",
+                    "function": "SetProcessPriorityBoost"
+                },
+                {
+                    "address": "0x180078628",
+                    "function": "GetProcessPriorityBoost"
+                }
+            ],
+            "api-ms-win-core-console-l1-1-0.dll": [
+                {
+                    "address": "0x1800774f0",
+                    "function": "AllocConsole"
+                },
+                {
+                    "address": "0x1800774f8",
+                    "function": "GetConsoleCP"
+                },
+                {
+                    "address": "0x180077500",
+                    "function": "GetConsoleMode"
+                },
+                {
+                    "address": "0x180077508",
+                    "function": "GetConsoleOutputCP"
+                },
+                {
+                    "address": "0x180077510",
+                    "function": "GetNumberOfConsoleInputEvents"
+                },
+                {
+                    "address": "0x180077518",
+                    "function": "ReadConsoleA"
+                },
+                {
+                    "address": "0x180077520",
+                    "function": "ReadConsoleInputA"
+                },
+                {
+                    "address": "0x180077528",
+                    "function": "ReadConsoleInputW"
+                },
+                {
+                    "address": "0x180077530",
+                    "function": "ReadConsoleW"
+                },
+                {
+                    "address": "0x180077538",
+                    "function": "SetConsoleCtrlHandler"
+                },
+                {
+                    "address": "0x180077540",
+                    "function": "SetConsoleMode"
+                },
+                {
+                    "address": "0x180077548",
+                    "function": "WriteConsoleA"
+                },
+                {
+                    "address": "0x180077550",
+                    "function": "WriteConsoleW"
+                }
+            ],
+            "api-ms-win-core-windowserrorreporting-l1-1-0.dll": [
+                {
+                    "address": "0x180078d60",
+                    "function": "GetApplicationRecoveryCallback"
+                },
+                {
+                    "address": "0x180078d68",
+                    "function": "WerUnregisterFile"
+                },
+                {
+                    "address": "0x180078d70",
+                    "function": "WerRegisterRuntimeExceptionModule"
+                },
+                {
+                    "address": "0x180078d78",
+                    "function": "WerUnregisterRuntimeExceptionModule"
+                },
+                {
+                    "address": "0x180078d80",
+                    "function": "WerUnregisterMemoryBlock"
+                },
+                {
+                    "address": "0x180078d88",
+                    "function": "WerRegisterMemoryBlock"
+                },
+                {
+                    "address": "0x180078d90",
+                    "function": "GetApplicationRestartSettings"
+                },
+                {
+                    "address": "0x180078d98",
+                    "function": "WerRegisterFile"
+                }
+            ],
+            "api-ms-win-core-systemtopology-l1-1-0.dll": [
+                {
+                    "address": "0x180078c88",
+                    "function": "GetNumaHighestNodeNumber"
+                },
+                {
+                    "address": "0x180078c90",
+                    "function": "GetNumaNodeProcessorMaskEx"
+                }
+            ],
+            "api-ms-win-core-datetime-l1-1-0.dll": [
+                {
+                    "address": "0x1800777d8",
+                    "function": "GetTimeFormatA"
+                },
+                {
+                    "address": "0x1800777e0",
+                    "function": "GetTimeFormatW"
+                },
+                {
+                    "address": "0x1800777e8",
+                    "function": "GetDateFormatW"
+                },
+                {
+                    "address": "0x1800777f0",
+                    "function": "GetDateFormatA"
+                }
+            ],
+            "api-ms-win-core-namedpipe-l1-2-2.dll": [
+                {
+                    "address": "0x1800782c0",
+                    "function": "CallNamedPipeW"
+                }
+            ],
+            "api-ms-win-core-rtlsupport-l1-1-0.dll": [
+                {
+                    "address": "0x180078918",
+                    "function": "RtlVirtualUnwind"
+                },
+                {
+                    "address": "0x180078920",
+                    "function": "RtlUnwindEx"
+                },
+                {
+                    "address": "0x180078928",
+                    "function": "RtlRestoreContext"
+                },
+                {
+                    "address": "0x180078930",
+                    "function": "RtlLookupFunctionEntry"
+                },
+                {
+                    "address": "0x180078938",
+                    "function": "RtlInstallFunctionTableCallback"
+                },
+                {
+                    "address": "0x180078940",
+                    "function": "RtlRaiseException"
+                },
+                {
+                    "address": "0x180078948",
+                    "function": "RtlDeleteFunctionTable"
+                },
+                {
+                    "address": "0x180078950",
+                    "function": "RtlCaptureContext"
+                },
+                {
+                    "address": "0x180078958",
+                    "function": "RtlAddFunctionTable"
+                },
+                {
+                    "address": "0x180078960",
+                    "function": "RtlPcToFileHeader"
+                },
+                {
+                    "address": "0x180078968",
+                    "function": "RtlUnwind"
+                },
+                {
+                    "address": "0x180078970",
+                    "function": "RtlCaptureStackBackTrace"
+                },
+                {
+                    "address": "0x180078978",
+                    "function": "RtlCompareMemory"
+                }
+            ],
+            "api-ms-win-core-windowserrorreporting-l1-1-1.dll": [
+                {
+                    "address": "0x180078da8",
+                    "function": "WerRegisterExcludedMemoryBlock"
+                },
+                {
+                    "address": "0x180078db0",
+                    "function": "WerUnregisterExcludedMemoryBlock"
+                },
+                {
+                    "address": "0x180078db8",
+                    "function": "WerRegisterCustomMetadata"
+                },
+                {
+                    "address": "0x180078dc0",
+                    "function": "WerUnregisterAdditionalProcess"
+                },
+                {
+                    "address": "0x180078dc8",
+                    "function": "WerRegisterAdditionalProcess"
+                },
+                {
+                    "address": "0x180078dd0",
+                    "function": "WerUnregisterCustomMetadata"
+                }
+            ],
+            "api-ms-win-core-psapi-l1-1-0.dll": [
+                {
+                    "address": "0x1800786e0",
+                    "function": "K32GetWsChanges"
+                },
+                {
+                    "address": "0x1800786e8",
+                    "function": "K32GetWsChangesEx"
+                },
+                {
+                    "address": "0x1800786f0",
+                    "function": "K32GetMappedFileNameW"
+                },
+                {
+                    "address": "0x1800786f8",
+                    "function": "K32EnumDeviceDrivers"
+                },
+                {
+                    "address": "0x180078700",
+                    "function": "K32QueryWorkingSetEx"
+                },
+                {
+                    "address": "0x180078708",
+                    "function": "K32GetDeviceDriverFileNameW"
+                },
+                {
+                    "address": "0x180078710",
+                    "function": "K32GetProcessMemoryInfo"
+                },
+                {
+                    "address": "0x180078718",
+                    "function": "K32GetPerformanceInfo"
+                },
+                {
+                    "address": "0x180078720",
+                    "function": "K32EnumPageFilesW"
+                },
+                {
+                    "address": "0x180078728",
+                    "function": "K32GetProcessImageFileNameW"
+                },
+                {
+                    "address": "0x180078730",
+                    "function": "K32InitializeProcessForWsWatch"
+                },
+                {
+                    "address": "0x180078738",
+                    "function": "K32QueryWorkingSet"
+                },
+                {
+                    "address": "0x180078740",
+                    "function": "K32EmptyWorkingSet"
+                },
+                {
+                    "address": "0x180078748",
+                    "function": "K32GetModuleInformation"
+                },
+                {
+                    "address": "0x180078750",
+                    "function": "K32GetModuleFileNameExW"
+                },
+                {
+                    "address": "0x180078758",
+                    "function": "K32GetModuleBaseNameW"
+                },
+                {
+                    "address": "0x180078760",
+                    "function": "K32EnumProcessModulesEx"
+                },
+                {
+                    "address": "0x180078768",
+                    "function": "K32EnumProcessModules"
+                },
+                {
+                    "address": "0x180078770",
+                    "function": "K32GetDeviceDriverBaseNameW"
+                },
+                {
+                    "address": "0x180078778",
+                    "function": "QueryFullProcessImageNameW"
+                },
+                {
+                    "address": "0x180078780",
+                    "function": "K32EnumProcesses"
+                }
+            ],
+            "api-ms-win-core-localization-private-l1-1-0.dll": [
+                {
+                    "address": "0x1800780f0",
+                    "function": "NlsUpdateSystemLocale"
+                },
+                {
+                    "address": "0x1800780f8",
+                    "function": "NlsWriteEtwEvent"
+                },
+                {
+                    "address": "0x180078100",
+                    "function": "NlsGetCacheUpdateCount"
+                },
+                {
+                    "address": "0x180078108",
+                    "function": "NlsCheckPolicy"
+                },
+                {
+                    "address": "0x180078110",
+                    "function": "NlsUpdateLocale"
+                },
+                {
+                    "address": "0x180078118",
+                    "function": "NlsEventDataDescCreate"
+                }
+            ],
+            "api-ms-win-core-fibers-l1-1-0.dll": [
+                {
+                    "address": "0x1800778e8",
+                    "function": "FlsFree"
+                },
+                {
+                    "address": "0x1800778f0",
+                    "function": "FlsGetValue"
+                },
+                {
+                    "address": "0x1800778f8",
+                    "function": "FlsSetValue"
+                },
+                {
+                    "address": "0x180077900",
+                    "function": "FlsAlloc"
+                }
+            ],
+            "api-ms-win-core-processthreads-l1-1-3.dll": [
+                {
+                    "address": "0x180078638",
+                    "function": "GetProcessInformation"
+                },
+                {
+                    "address": "0x180078640",
+                    "function": "SetProcessInformation"
+                },
+                {
+                    "address": "0x180078648",
+                    "function": "SetThreadIdealProcessor"
+                },
+                {
+                    "address": "0x180078650",
+                    "function": "GetProcessShutdownParameters"
+                }
+            ],
+            "api-ms-win-core-io-l1-1-0.dll": [
+                {
+                    "address": "0x180077d58",
+                    "function": "GetQueuedCompletionStatusEx"
+                },
+                {
+                    "address": "0x180077d60",
+                    "function": "GetOverlappedResult"
+                },
+                {
+                    "address": "0x180077d68",
+                    "function": "PostQueuedCompletionStatus"
+                },
+                {
+                    "address": "0x180077d70",
+                    "function": "CreateIoCompletionPort"
+                },
+                {
+                    "address": "0x180077d78",
+                    "function": "CancelIoEx"
+                },
+                {
+                    "address": "0x180077d80",
+                    "function": "GetQueuedCompletionStatus"
+                },
+                {
+                    "address": "0x180077d88",
+                    "function": "DeviceIoControl"
                 }
             ],
             "ntdll.dll": [
@@ -15623,326 +17194,6 @@
                     "function": "wcscmp"
                 }
             ],
-            "api-ms-win-core-synch-l1-1-0.dll": [
-                {
-                    "address": "0x180078a30",
-                    "function": "CreateWaitableTimerExW"
-                },
-                {
-                    "address": "0x180078a38",
-                    "function": "CreateSemaphoreExW"
-                },
-                {
-                    "address": "0x180078a40",
-                    "function": "CreateMutexW"
-                },
-                {
-                    "address": "0x180078a48",
-                    "function": "InitializeCriticalSectionEx"
-                },
-                {
-                    "address": "0x180078a50",
-                    "function": "OpenEventA"
-                },
-                {
-                    "address": "0x180078a58",
-                    "function": "OpenEventW"
-                },
-                {
-                    "address": "0x180078a60",
-                    "function": "OpenMutexW"
-                },
-                {
-                    "address": "0x180078a68",
-                    "function": "OpenSemaphoreW"
-                },
-                {
-                    "address": "0x180078a70",
-                    "function": "OpenWaitableTimerW"
-                },
-                {
-                    "address": "0x180078a78",
-                    "function": "ReleaseMutex"
-                },
-                {
-                    "address": "0x180078a80",
-                    "function": "ReleaseSemaphore"
-                },
-                {
-                    "address": "0x180078a88",
-                    "function": "ResetEvent"
-                },
-                {
-                    "address": "0x180078a90",
-                    "function": "SetEvent"
-                },
-                {
-                    "address": "0x180078a98",
-                    "function": "SetWaitableTimer"
-                },
-                {
-                    "address": "0x180078aa0",
-                    "function": "SleepEx"
-                },
-                {
-                    "address": "0x180078aa8",
-                    "function": "DeleteCriticalSection"
-                },
-                {
-                    "address": "0x180078ab0",
-                    "function": "WaitForMultipleObjectsEx"
-                },
-                {
-                    "address": "0x180078ab8",
-                    "function": "CreateMutexExW"
-                },
-                {
-                    "address": "0x180078ac0",
-                    "function": "CreateMutexExA"
-                },
-                {
-                    "address": "0x180078ac8",
-                    "function": "CancelWaitableTimer"
-                },
-                {
-                    "address": "0x180078ad0",
-                    "function": "CreateMutexA"
-                },
-                {
-                    "address": "0x180078ad8",
-                    "function": "CreateEventW"
-                },
-                {
-                    "address": "0x180078ae0",
-                    "function": "CreateEventExW"
-                },
-                {
-                    "address": "0x180078ae8",
-                    "function": "CreateEventExA"
-                },
-                {
-                    "address": "0x180078af0",
-                    "function": "CreateEventA"
-                },
-                {
-                    "address": "0x180078af8",
-                    "function": "InitializeCriticalSectionAndSpinCount"
-                },
-                {
-                    "address": "0x180078b00",
-                    "function": "WaitForSingleObject"
-                },
-                {
-                    "address": "0x180078b08",
-                    "function": "WaitForSingleObjectEx"
-                },
-                {
-                    "address": "0x180078b10",
-                    "function": "InitializeCriticalSection"
-                },
-                {
-                    "address": "0x180078b18",
-                    "function": "LeaveCriticalSection"
-                },
-                {
-                    "address": "0x180078b20",
-                    "function": "EnterCriticalSection"
-                }
-            ],
-            "api-ms-win-core-synch-l1-2-1.dll": [
-                {
-                    "address": "0x180078b60",
-                    "function": "WaitForMultipleObjects"
-                },
-                {
-                    "address": "0x180078b68",
-                    "function": "CreateSemaphoreW"
-                }
-            ],
-            "api-ms-win-core-normalization-l1-1-0.dll": [
-                {
-                    "address": "0x180078308",
-                    "function": "IdnToNameprepUnicode"
-                },
-                {
-                    "address": "0x180078310",
-                    "function": "GetStringScripts"
-                },
-                {
-                    "address": "0x180078318",
-                    "function": "NormalizeString"
-                },
-                {
-                    "address": "0x180078320",
-                    "function": "VerifyScripts"
-                },
-                {
-                    "address": "0x180078328",
-                    "function": "IsNormalizedString"
-                }
-            ],
-            "api-ms-win-core-sysinfo-l1-2-1.dll": [
-                {
-                    "address": "0x180078c48",
-                    "function": "GetPhysicallyInstalledSystemMemory"
-                },
-                {
-                    "address": "0x180078c50",
-                    "function": "DnsHostnameToComputerNameExW"
-                },
-                {
-                    "address": "0x180078c58",
-                    "function": "SetComputerNameEx2W"
-                }
-            ],
-            "api-ms-win-core-fibers-l2-1-0.dll": [
-                {
-                    "address": "0x180077910",
-                    "function": "ConvertThreadToFiber"
-                },
-                {
-                    "address": "0x180077918",
-                    "function": "SwitchToFiber"
-                },
-                {
-                    "address": "0x180077920",
-                    "function": "CreateFiber"
-                },
-                {
-                    "address": "0x180077928",
-                    "function": "DeleteFiber"
-                },
-                {
-                    "address": "0x180077930",
-                    "function": "ConvertFiberToThread"
-                }
-            ],
-            "api-ms-win-core-libraryloader-l1-2-2.dll": [
-                {
-                    "address": "0x180077eb8",
-                    "function": "EnumResourceNamesW"
-                }
-            ],
-            "api-ms-win-security-base-l1-1-0.dll": [
-                {
-                    "address": "0x180078eb0",
-                    "function": "DuplicateToken"
-                },
-                {
-                    "address": "0x180078eb8",
-                    "function": "FreeSid"
-                },
-                {
-                    "address": "0x180078ec0",
-                    "function": "AccessCheck"
-                },
-                {
-                    "address": "0x180078ec8",
-                    "function": "EqualSid"
-                },
-                {
-                    "address": "0x180078ed0",
-                    "function": "AllocateAndInitializeSid"
-                }
-            ],
-            "api-ms-win-core-file-l1-2-2.dll": [
-                {
-                    "address": "0x180077bd8",
-                    "function": "FindFirstFileNameW"
-                },
-                {
-                    "address": "0x180077be0",
-                    "function": "GetVolumeInformationA"
-                },
-                {
-                    "address": "0x180077be8",
-                    "function": "FindNextFileNameW"
-                },
-                {
-                    "address": "0x180077bf0",
-                    "function": "GetTempPathA"
-                },
-                {
-                    "address": "0x180077bf8",
-                    "function": "GetTempFileNameA"
-                },
-                {
-                    "address": "0x180077c00",
-                    "function": "FindFirstStreamW"
-                }
-            ],
-            "api-ms-win-core-appcompat-l1-1-1.dll": [
-                {
-                    "address": "0x180077440",
-                    "function": "BaseFreeAppCompatDataForProcess"
-                },
-                {
-                    "address": "0x180077448",
-                    "function": "BaseReadAppCompatDataForProcess"
-                }
-            ],
-            "api-ms-win-security-base-l1-2-0.dll": [
-                {
-                    "address": "0x180078ee0",
-                    "function": "CheckTokenCapability"
-                },
-                {
-                    "address": "0x180078ee8",
-                    "function": "CheckTokenMembershipEx"
-                },
-                {
-                    "address": "0x180078ef0",
-                    "function": "AddScopedPolicyIDAce"
-                },
-                {
-                    "address": "0x180078ef8",
-                    "function": "GetAppContainerAce"
-                },
-                {
-                    "address": "0x180078f00",
-                    "function": "GetCachedSigningLevel"
-                },
-                {
-                    "address": "0x180078f08",
-                    "function": "SetCachedSigningLevel"
-                },
-                {
-                    "address": "0x180078f10",
-                    "function": "AddResourceAttributeAce"
-                }
-            ],
-            "api-ms-win-core-localization-private-l1-1-0.dll": [
-                {
-                    "address": "0x1800780f0",
-                    "function": "NlsUpdateSystemLocale"
-                },
-                {
-                    "address": "0x1800780f8",
-                    "function": "NlsWriteEtwEvent"
-                },
-                {
-                    "address": "0x180078100",
-                    "function": "NlsGetCacheUpdateCount"
-                },
-                {
-                    "address": "0x180078108",
-                    "function": "NlsCheckPolicy"
-                },
-                {
-                    "address": "0x180078110",
-                    "function": "NlsUpdateLocale"
-                },
-                {
-                    "address": "0x180078118",
-                    "function": "NlsEventDataDescCreate"
-                }
-            ],
-            "api-ms-win-core-namedpipe-l1-2-2.dll": [
-                {
-                    "address": "0x1800782c0",
-                    "function": "CallNamedPipeW"
-                }
-            ],
             "api-ms-win-core-wow64-l1-1-0.dll": [
                 {
                     "address": "0x180078df8",
@@ -15957,102 +17208,24 @@
                     "function": "IsWow64Process"
                 }
             ],
-            "api-ms-win-core-console-l1-1-0.dll": [
+            "api-ms-win-core-sysinfo-l1-2-3.dll": [
                 {
-                    "address": "0x1800774f0",
-                    "function": "AllocConsole"
+                    "address": "0x180078c68",
+                    "function": "SetComputerNameA"
                 },
                 {
-                    "address": "0x1800774f8",
-                    "function": "GetConsoleCP"
+                    "address": "0x180078c70",
+                    "function": "SetComputerNameW"
                 },
                 {
-                    "address": "0x180077500",
-                    "function": "GetConsoleMode"
-                },
-                {
-                    "address": "0x180077508",
-                    "function": "GetConsoleOutputCP"
-                },
-                {
-                    "address": "0x180077510",
-                    "function": "GetNumberOfConsoleInputEvents"
-                },
-                {
-                    "address": "0x180077518",
-                    "function": "ReadConsoleA"
-                },
-                {
-                    "address": "0x180077520",
-                    "function": "ReadConsoleInputA"
-                },
-                {
-                    "address": "0x180077528",
-                    "function": "ReadConsoleInputW"
-                },
-                {
-                    "address": "0x180077530",
-                    "function": "ReadConsoleW"
-                },
-                {
-                    "address": "0x180077538",
-                    "function": "SetConsoleCtrlHandler"
-                },
-                {
-                    "address": "0x180077540",
-                    "function": "SetConsoleMode"
-                },
-                {
-                    "address": "0x180077548",
-                    "function": "WriteConsoleA"
-                },
-                {
-                    "address": "0x180077550",
-                    "function": "WriteConsoleW"
+                    "address": "0x180078c78",
+                    "function": "SetComputerNameExA"
                 }
             ],
-            "api-ms-win-core-file-l1-2-0.dll": [
+            "api-ms-win-core-file-l2-1-1.dll": [
                 {
-                    "address": "0x180077b98",
-                    "function": "CreateFile2"
-                },
-                {
-                    "address": "0x180077ba0",
-                    "function": "GetVolumePathNamesForVolumeNameW"
-                },
-                {
-                    "address": "0x180077ba8",
-                    "function": "GetTempPathW"
-                }
-            ],
-            "api-ms-win-core-appcompat-l1-1-0.dll": [
-                {
-                    "address": "0x180077400",
-                    "function": "BaseUpdateAppcompatCache"
-                },
-                {
-                    "address": "0x180077408",
-                    "function": "BaseFlushAppcompatCache"
-                },
-                {
-                    "address": "0x180077410",
-                    "function": "BaseCheckAppcompatCacheEx"
-                },
-                {
-                    "address": "0x180077418",
-                    "function": "BaseDumpAppcompatCache"
-                },
-                {
-                    "address": "0x180077420",
-                    "function": "BaseCheckAppcompatCache"
-                },
-                {
-                    "address": "0x180077428",
-                    "function": "BaseInitAppcompatCacheSupport"
-                },
-                {
-                    "address": "0x180077430",
-                    "function": "BaseCleanupAppcompatCacheSupport"
+                    "address": "0x180077c70",
+                    "function": "OpenFileById"
                 }
             ],
             "api-ms-win-core-namedpipe-l1-1-0.dll": [
@@ -16093,252 +17266,10 @@
                     "function": "CreatePipe"
                 }
             ],
-            "api-ms-win-core-namedpipe-l1-2-1.dll": [
+            "api-ms-win-core-libraryloader-l1-2-2.dll": [
                 {
-                    "address": "0x1800782b0",
-                    "function": "GetNamedPipeHandleStateW"
-                }
-            ],
-            "api-ms-win-core-fibers-l1-1-0.dll": [
-                {
-                    "address": "0x1800778e8",
-                    "function": "FlsFree"
-                },
-                {
-                    "address": "0x1800778f0",
-                    "function": "FlsGetValue"
-                },
-                {
-                    "address": "0x1800778f8",
-                    "function": "FlsSetValue"
-                },
-                {
-                    "address": "0x180077900",
-                    "function": "FlsAlloc"
-                }
-            ],
-            "api-ms-win-core-localization-l1-2-0.dll": [
-                {
-                    "address": "0x180077ed8",
-                    "function": "SetCalendarInfoW"
-                },
-                {
-                    "address": "0x180077ee0",
-                    "function": "SetLocaleInfoW"
-                },
-                {
-                    "address": "0x180077ee8",
-                    "function": "GetNLSVersion"
-                },
-                {
-                    "address": "0x180077ef0",
-                    "function": "LCMapStringW"
-                },
-                {
-                    "address": "0x180077ef8",
-                    "function": "ResolveLocaleName"
-                },
-                {
-                    "address": "0x180077f00",
-                    "function": "VerLanguageNameW"
-                },
-                {
-                    "address": "0x180077f08",
-                    "function": "LocaleNameToLCID"
-                },
-                {
-                    "address": "0x180077f10",
-                    "function": "LCMapStringEx"
-                },
-                {
-                    "address": "0x180077f18",
-                    "function": "ConvertDefaultLocale"
-                },
-                {
-                    "address": "0x180077f20",
-                    "function": "IsValidLocaleName"
-                },
-                {
-                    "address": "0x180077f28",
-                    "function": "IdnToUnicode"
-                },
-                {
-                    "address": "0x180077f30",
-                    "function": "IdnToAscii"
-                },
-                {
-                    "address": "0x180077f38",
-                    "function": "GetUserPreferredUILanguages"
-                },
-                {
-                    "address": "0x180077f40",
-                    "function": "SetThreadLocale"
-                },
-                {
-                    "address": "0x180077f48",
-                    "function": "GetUILanguageInfo"
-                },
-                {
-                    "address": "0x180077f50",
-                    "function": "FindNLSStringEx"
-                },
-                {
-                    "address": "0x180077f58",
-                    "function": "GetFileMUIInfo"
-                },
-                {
-                    "address": "0x180077f60",
-                    "function": "GetThreadUILanguage"
-                },
-                {
-                    "address": "0x180077f68",
-                    "function": "SetProcessPreferredUILanguages"
-                },
-                {
-                    "address": "0x180077f70",
-                    "function": "GetThreadPreferredUILanguages"
-                },
-                {
-                    "address": "0x180077f78",
-                    "function": "GetSystemPreferredUILanguages"
-                },
-                {
-                    "address": "0x180077f80",
-                    "function": "GetFileMUIPath"
-                },
-                {
-                    "address": "0x180077f88",
-                    "function": "GetCalendarInfoEx"
-                },
-                {
-                    "address": "0x180077f90",
-                    "function": "GetNLSVersionEx"
-                },
-                {
-                    "address": "0x180077f98",
-                    "function": "IsDBCSLeadByte"
-                },
-                {
-                    "address": "0x180077fa0",
-                    "function": "IsDBCSLeadByteEx"
-                },
-                {
-                    "address": "0x180077fa8",
-                    "function": "GetLocaleInfoEx"
-                },
-                {
-                    "address": "0x180077fb0",
-                    "function": "IsNLSDefinedString"
-                },
-                {
-                    "address": "0x180077fb8",
-                    "function": "IsValidCodePage"
-                },
-                {
-                    "address": "0x180077fc0",
-                    "function": "IsValidLanguageGroup"
-                },
-                {
-                    "address": "0x180077fc8",
-                    "function": "IsValidLocale"
-                },
-                {
-                    "address": "0x180077fd0",
-                    "function": "LCMapStringA"
-                },
-                {
-                    "address": "0x180077fd8",
-                    "function": "GetUserDefaultLCID"
-                },
-                {
-                    "address": "0x180077fe0",
-                    "function": "GetUserDefaultLangID"
-                },
-                {
-                    "address": "0x180077fe8",
-                    "function": "GetThreadLocale"
-                },
-                {
-                    "address": "0x180077ff0",
-                    "function": "GetSystemDefaultLCID"
-                },
-                {
-                    "address": "0x180077ff8",
-                    "function": "GetSystemDefaultLangID"
-                },
-                {
-                    "address": "0x180078000",
-                    "function": "GetProcessPreferredUILanguages"
-                },
-                {
-                    "address": "0x180078008",
-                    "function": "GetOEMCP"
-                },
-                {
-                    "address": "0x180078010",
-                    "function": "GetLocaleInfoW"
-                },
-                {
-                    "address": "0x180078018",
-                    "function": "GetLocaleInfoA"
-                },
-                {
-                    "address": "0x180078020",
-                    "function": "SetThreadUILanguage"
-                },
-                {
-                    "address": "0x180078028",
-                    "function": "SetThreadPreferredUILanguages"
-                },
-                {
-                    "address": "0x180078030",
-                    "function": "IsValidNLSVersion"
-                },
-                {
-                    "address": "0x180078038",
-                    "function": "GetCalendarInfoW"
-                },
-                {
-                    "address": "0x180078040",
-                    "function": "GetCPInfoExW"
-                },
-                {
-                    "address": "0x180078048",
-                    "function": "GetCPInfo"
-                },
-                {
-                    "address": "0x180078050",
-                    "function": "GetACP"
-                },
-                {
-                    "address": "0x180078058",
-                    "function": "FormatMessageW"
-                },
-                {
-                    "address": "0x180078060",
-                    "function": "FormatMessageA"
-                },
-                {
-                    "address": "0x180078068",
-                    "function": "FindNLSString"
-                },
-                {
-                    "address": "0x180078070",
-                    "function": "EnumSystemLocalesW"
-                },
-                {
-                    "address": "0x180078078",
-                    "function": "EnumSystemLocalesA"
-                },
-                {
-                    "address": "0x180078080",
-                    "function": "VerLanguageNameA"
-                }
-            ],
-            "api-ms-win-core-file-l2-1-3.dll": [
-                {
-                    "address": "0x180077c98",
-                    "function": "ReadDirectoryChangesExW"
+                    "address": "0x180077eb8",
+                    "function": "EnumResourceNamesW"
                 }
             ],
             "api-ms-win-core-heap-l1-1-0.dll": [
@@ -16399,298 +17330,290 @@
                     "function": "GetProcessHeaps"
                 }
             ],
-            "api-ms-win-core-debug-l1-1-1.dll": [
+            "api-ms-win-core-file-l1-1-0.dll": [
                 {
-                    "address": "0x180077850",
-                    "function": "CheckRemoteDebuggerPresent"
+                    "address": "0x180077958",
+                    "function": "DeleteFileA"
                 },
                 {
-                    "address": "0x180077858",
-                    "function": "DebugActiveProcessStop"
+                    "address": "0x180077960",
+                    "function": "FindFirstFileExA"
                 },
                 {
-                    "address": "0x180077860",
-                    "function": "DebugActiveProcess"
+                    "address": "0x180077968",
+                    "function": "DeleteFileW"
                 },
                 {
-                    "address": "0x180077868",
-                    "function": "ContinueDebugEvent"
+                    "address": "0x180077970",
+                    "function": "DeleteVolumeMountPointW"
                 },
                 {
-                    "address": "0x180077870",
-                    "function": "WaitForDebugEvent"
-                }
-            ],
-            "api-ms-win-core-windowserrorreporting-l1-1-2.dll": [
-                {
-                    "address": "0x180078de0",
-                    "function": "WerUnregisterAppLocalDump"
+                    "address": "0x180077978",
+                    "function": "FileTimeToLocalFileTime"
                 },
                 {
-                    "address": "0x180078de8",
-                    "function": "WerRegisterAppLocalDump"
-                }
-            ],
-            "api-ms-win-core-realtime-l1-1-0.dll": [
-                {
-                    "address": "0x180078790",
-                    "function": "QueryProcessCycleTime"
+                    "address": "0x180077980",
+                    "function": "DefineDosDeviceW"
                 },
                 {
-                    "address": "0x180078798",
-                    "function": "QueryIdleProcessorCycleTime"
+                    "address": "0x180077988",
+                    "function": "FindCloseChangeNotification"
                 },
                 {
-                    "address": "0x1800787a0",
-                    "function": "QueryIdleProcessorCycleTimeEx"
+                    "address": "0x180077990",
+                    "function": "GetDriveTypeA"
                 },
                 {
-                    "address": "0x1800787a8",
-                    "function": "QueryUnbiasedInterruptTime"
+                    "address": "0x180077998",
+                    "function": "FindFirstChangeNotificationW"
                 },
                 {
-                    "address": "0x1800787b0",
-                    "function": "QueryThreadCycleTime"
-                }
-            ],
-            "api-ms-win-core-xstate-l2-1-0.dll": [
-                {
-                    "address": "0x180078e40",
-                    "function": "GetEnabledXStateFeatures"
+                    "address": "0x1800779a0",
+                    "function": "CreateFileW"
                 },
                 {
-                    "address": "0x180078e48",
-                    "function": "CopyContext"
+                    "address": "0x1800779a8",
+                    "function": "GetFileAttributesA"
                 },
                 {
-                    "address": "0x180078e50",
-                    "function": "InitializeContext"
+                    "address": "0x1800779b0",
+                    "function": "GetFileAttributesExA"
                 },
                 {
-                    "address": "0x180078e58",
-                    "function": "LocateXStateFeature"
+                    "address": "0x1800779b8",
+                    "function": "GetFileAttributesExW"
                 },
                 {
-                    "address": "0x180078e60",
-                    "function": "GetXStateFeaturesMask"
+                    "address": "0x1800779c0",
+                    "function": "GetFileAttributesW"
                 },
                 {
-                    "address": "0x180078e68",
-                    "function": "SetXStateFeaturesMask"
-                }
-            ],
-            "api-ms-win-core-rtlsupport-l1-1-0.dll": [
-                {
-                    "address": "0x180078918",
-                    "function": "RtlVirtualUnwind"
+                    "address": "0x1800779c8",
+                    "function": "GetFileInformationByHandle"
                 },
                 {
-                    "address": "0x180078920",
-                    "function": "RtlUnwindEx"
+                    "address": "0x1800779d0",
+                    "function": "GetFileSize"
                 },
                 {
-                    "address": "0x180078928",
-                    "function": "RtlRestoreContext"
+                    "address": "0x1800779d8",
+                    "function": "GetFileSizeEx"
                 },
                 {
-                    "address": "0x180078930",
-                    "function": "RtlLookupFunctionEntry"
+                    "address": "0x1800779e0",
+                    "function": "GetFileTime"
                 },
                 {
-                    "address": "0x180078938",
-                    "function": "RtlInstallFunctionTableCallback"
+                    "address": "0x1800779e8",
+                    "function": "GetFileType"
                 },
                 {
-                    "address": "0x180078940",
-                    "function": "RtlRaiseException"
+                    "address": "0x1800779f0",
+                    "function": "GetFinalPathNameByHandleA"
                 },
                 {
-                    "address": "0x180078948",
-                    "function": "RtlDeleteFunctionTable"
+                    "address": "0x1800779f8",
+                    "function": "CreateFileA"
                 },
                 {
-                    "address": "0x180078950",
-                    "function": "RtlCaptureContext"
+                    "address": "0x180077a00",
+                    "function": "CreateDirectoryW"
                 },
                 {
-                    "address": "0x180078958",
-                    "function": "RtlAddFunctionTable"
+                    "address": "0x180077a08",
+                    "function": "CreateDirectoryA"
                 },
                 {
-                    "address": "0x180078960",
-                    "function": "RtlPcToFileHeader"
+                    "address": "0x180077a10",
+                    "function": "CompareFileTime"
                 },
                 {
-                    "address": "0x180078968",
-                    "function": "RtlUnwind"
+                    "address": "0x180077a18",
+                    "function": "GetDiskFreeSpaceW"
                 },
                 {
-                    "address": "0x180078970",
-                    "function": "RtlCaptureStackBackTrace"
+                    "address": "0x180077a20",
+                    "function": "FindFirstFileExW"
                 },
                 {
-                    "address": "0x180078978",
-                    "function": "RtlCompareMemory"
-                }
-            ],
-            "api-ms-win-core-fibers-l2-1-1.dll": [
-                {
-                    "address": "0x180077940",
-                    "function": "CreateFiberEx"
+                    "address": "0x180077a28",
+                    "function": "FindFirstFileA"
                 },
                 {
-                    "address": "0x180077948",
-                    "function": "ConvertThreadToFiberEx"
-                }
-            ],
-            "api-ms-win-core-file-l2-1-1.dll": [
-                {
-                    "address": "0x180077c70",
-                    "function": "OpenFileById"
-                }
-            ],
-            "api-ms-win-core-console-l2-1-0.dll": [
-                {
-                    "address": "0x180077588",
-                    "function": "FlushConsoleInputBuffer"
+                    "address": "0x180077a30",
+                    "function": "GetDriveTypeW"
                 },
                 {
-                    "address": "0x180077590",
-                    "function": "GenerateConsoleCtrlEvent"
+                    "address": "0x180077a38",
+                    "function": "FindFirstFileW"
                 },
                 {
-                    "address": "0x180077598",
-                    "function": "GetConsoleCursorInfo"
+                    "address": "0x180077a40",
+                    "function": "FindFirstVolumeW"
                 },
                 {
-                    "address": "0x1800775a0",
-                    "function": "FillConsoleOutputCharacterW"
+                    "address": "0x180077a48",
+                    "function": "FindNextChangeNotification"
                 },
                 {
-                    "address": "0x1800775a8",
-                    "function": "FillConsoleOutputCharacterA"
+                    "address": "0x180077a50",
+                    "function": "FindNextFileA"
                 },
                 {
-                    "address": "0x1800775b0",
-                    "function": "FillConsoleOutputAttribute"
+                    "address": "0x180077a58",
+                    "function": "FindNextFileW"
                 },
                 {
-                    "address": "0x1800775b8",
-                    "function": "WriteConsoleOutputCharacterA"
+                    "address": "0x180077a60",
+                    "function": "FindNextVolumeW"
                 },
                 {
-                    "address": "0x1800775c0",
-                    "function": "GetConsoleScreenBufferInfo"
+                    "address": "0x180077a68",
+                    "function": "FindVolumeClose"
                 },
                 {
-                    "address": "0x1800775c8",
-                    "function": "GetConsoleScreenBufferInfoEx"
+                    "address": "0x180077a70",
+                    "function": "FlushFileBuffers"
                 },
                 {
-                    "address": "0x1800775d0",
-                    "function": "WriteConsoleOutputCharacterW"
+                    "address": "0x180077a78",
+                    "function": "GetDiskFreeSpaceA"
                 },
                 {
-                    "address": "0x1800775d8",
-                    "function": "CreateConsoleScreenBuffer"
+                    "address": "0x180077a80",
+                    "function": "GetDiskFreeSpaceExA"
                 },
                 {
-                    "address": "0x1800775e0",
-                    "function": "WriteConsoleOutputAttribute"
+                    "address": "0x180077a88",
+                    "function": "FindClose"
                 },
                 {
-                    "address": "0x1800775e8",
-                    "function": "WriteConsoleOutputW"
+                    "address": "0x180077a90",
+                    "function": "GetDiskFreeSpaceExW"
                 },
                 {
-                    "address": "0x1800775f0",
-                    "function": "ReadConsoleOutputA"
+                    "address": "0x180077a98",
+                    "function": "LockFileEx"
                 },
                 {
-                    "address": "0x1800775f8",
-                    "function": "ReadConsoleOutputAttribute"
+                    "address": "0x180077aa0",
+                    "function": "QueryDosDeviceW"
                 },
                 {
-                    "address": "0x180077600",
-                    "function": "ReadConsoleOutputCharacterA"
+                    "address": "0x180077aa8",
+                    "function": "ReadFile"
                 },
                 {
-                    "address": "0x180077608",
-                    "function": "ReadConsoleOutputCharacterW"
+                    "address": "0x180077ab0",
+                    "function": "LockFile"
                 },
                 {
-                    "address": "0x180077610",
-                    "function": "ReadConsoleOutputW"
+                    "address": "0x180077ab8",
+                    "function": "LocalFileTimeToFileTime"
                 },
                 {
-                    "address": "0x180077618",
-                    "function": "ScrollConsoleScreenBufferA"
+                    "address": "0x180077ac0",
+                    "function": "GetVolumePathNameW"
                 },
                 {
-                    "address": "0x180077620",
-                    "function": "ScrollConsoleScreenBufferW"
+                    "address": "0x180077ac8",
+                    "function": "GetVolumeInformationW"
                 },
                 {
-                    "address": "0x180077628",
-                    "function": "SetConsoleActiveScreenBuffer"
+                    "address": "0x180077ad0",
+                    "function": "GetVolumeInformationByHandleW"
                 },
                 {
-                    "address": "0x180077630",
-                    "function": "GetLargestConsoleWindowSize"
+                    "address": "0x180077ad8",
+                    "function": "ReadFileEx"
                 },
                 {
-                    "address": "0x180077638",
-                    "function": "SetConsoleCP"
+                    "address": "0x180077ae0",
+                    "function": "ReadFileScatter"
                 },
                 {
-                    "address": "0x180077640",
-                    "function": "SetConsoleCursorInfo"
+                    "address": "0x180077ae8",
+                    "function": "GetTempFileNameW"
                 },
                 {
-                    "address": "0x180077648",
-                    "function": "SetConsoleCursorPosition"
+                    "address": "0x180077af0",
+                    "function": "RemoveDirectoryA"
                 },
                 {
-                    "address": "0x180077650",
-                    "function": "SetConsoleOutputCP"
+                    "address": "0x180077af8",
+                    "function": "RemoveDirectoryW"
                 },
                 {
-                    "address": "0x180077658",
-                    "function": "SetConsoleScreenBufferInfoEx"
+                    "address": "0x180077b00",
+                    "function": "SetEndOfFile"
                 },
                 {
-                    "address": "0x180077660",
-                    "function": "SetConsoleScreenBufferSize"
+                    "address": "0x180077b08",
+                    "function": "GetLogicalDriveStringsW"
                 },
                 {
-                    "address": "0x180077668",
-                    "function": "SetConsoleTextAttribute"
+                    "address": "0x180077b10",
+                    "function": "GetFullPathNameW"
                 },
                 {
-                    "address": "0x180077670",
-                    "function": "WriteConsoleOutputA"
+                    "address": "0x180077b18",
+                    "function": "GetFullPathNameA"
                 },
                 {
-                    "address": "0x180077678",
-                    "function": "WriteConsoleInputW"
+                    "address": "0x180077b20",
+                    "function": "SetFileAttributesA"
                 },
                 {
-                    "address": "0x180077680",
-                    "function": "SetConsoleWindowInfo"
+                    "address": "0x180077b28",
+                    "function": "SetFileAttributesW"
                 },
                 {
-                    "address": "0x180077688",
-                    "function": "WriteConsoleInputA"
-                }
-            ],
-            "api-ms-win-core-systemtopology-l1-1-0.dll": [
-                {
-                    "address": "0x180078c88",
-                    "function": "GetNumaHighestNodeNumber"
+                    "address": "0x180077b30",
+                    "function": "SetFileInformationByHandle"
                 },
                 {
-                    "address": "0x180078c90",
-                    "function": "GetNumaNodeProcessorMaskEx"
+                    "address": "0x180077b38",
+                    "function": "SetFilePointer"
+                },
+                {
+                    "address": "0x180077b40",
+                    "function": "SetFilePointerEx"
+                },
+                {
+                    "address": "0x180077b48",
+                    "function": "SetFileTime"
+                },
+                {
+                    "address": "0x180077b50",
+                    "function": "SetFileValidData"
+                },
+                {
+                    "address": "0x180077b58",
+                    "function": "UnlockFile"
+                },
+                {
+                    "address": "0x180077b60",
+                    "function": "FindFirstChangeNotificationA"
+                },
+                {
+                    "address": "0x180077b68",
+                    "function": "GetFinalPathNameByHandleW"
+                },
+                {
+                    "address": "0x180077b70",
+                    "function": "UnlockFileEx"
+                },
+                {
+                    "address": "0x180077b78",
+                    "function": "WriteFile"
+                },
+                {
+                    "address": "0x180077b80",
+                    "function": "WriteFileEx"
+                },
+                {
+                    "address": "0x180077b88",
+                    "function": "WriteFileGather"
                 }
             ],
             "api-ms-win-core-psapi-ansi-l1-1-0.dll": [
@@ -16727,98 +17650,6 @@
                     "function": "K32GetModuleBaseNameA"
                 }
             ],
-            "api-ms-win-core-console-l1-2-0.dll": [
-                {
-                    "address": "0x180077560",
-                    "function": "FreeConsole"
-                },
-                {
-                    "address": "0x180077568",
-                    "function": "PeekConsoleInputA"
-                },
-                {
-                    "address": "0x180077570",
-                    "function": "PeekConsoleInputW"
-                },
-                {
-                    "address": "0x180077578",
-                    "function": "AttachConsole"
-                }
-            ],
-            "api-ms-win-core-processtopology-l1-1-0.dll": [
-                {
-                    "address": "0x180078660",
-                    "function": "SetThreadGroupAffinity"
-                },
-                {
-                    "address": "0x180078668",
-                    "function": "GetProcessGroupAffinity"
-                },
-                {
-                    "address": "0x180078670",
-                    "function": "GetThreadGroupAffinity"
-                }
-            ],
-            "api-ms-win-core-processthreads-l1-1-2.dll": [
-                {
-                    "address": "0x180078600",
-                    "function": "GetThreadIOPendingFlag"
-                },
-                {
-                    "address": "0x180078608",
-                    "function": "SetThreadInformation"
-                },
-                {
-                    "address": "0x180078610",
-                    "function": "GetSystemTimes"
-                },
-                {
-                    "address": "0x180078618",
-                    "function": "GetThreadInformation"
-                },
-                {
-                    "address": "0x180078620",
-                    "function": "SetProcessPriorityBoost"
-                },
-                {
-                    "address": "0x180078628",
-                    "function": "GetProcessPriorityBoost"
-                }
-            ],
-            "api-ms-win-core-windowserrorreporting-l1-1-0.dll": [
-                {
-                    "address": "0x180078d60",
-                    "function": "GetApplicationRecoveryCallback"
-                },
-                {
-                    "address": "0x180078d68",
-                    "function": "WerUnregisterFile"
-                },
-                {
-                    "address": "0x180078d70",
-                    "function": "WerRegisterRuntimeExceptionModule"
-                },
-                {
-                    "address": "0x180078d78",
-                    "function": "WerUnregisterRuntimeExceptionModule"
-                },
-                {
-                    "address": "0x180078d80",
-                    "function": "WerUnregisterMemoryBlock"
-                },
-                {
-                    "address": "0x180078d88",
-                    "function": "WerRegisterMemoryBlock"
-                },
-                {
-                    "address": "0x180078d90",
-                    "function": "GetApplicationRestartSettings"
-                },
-                {
-                    "address": "0x180078d98",
-                    "function": "WerRegisterFile"
-                }
-            ],
             "api-ms-win-core-string-l1-1-0.dll": [
                 {
                     "address": "0x1800789e8",
@@ -16853,126 +17684,198 @@
                     "function": "GetStringTypeExW"
                 }
             ],
+            "api-ms-win-core-libraryloader-l1-2-1.dll": [
+                {
+                    "address": "0x180077e98",
+                    "function": "LoadLibraryW"
+                },
+                {
+                    "address": "0x180077ea0",
+                    "function": "FindResourceW"
+                },
+                {
+                    "address": "0x180077ea8",
+                    "function": "LoadLibraryA"
+                }
+            ],
+            "api-ms-win-core-sysinfo-l1-2-1.dll": [
+                {
+                    "address": "0x180078c48",
+                    "function": "GetPhysicallyInstalledSystemMemory"
+                },
+                {
+                    "address": "0x180078c50",
+                    "function": "DnsHostnameToComputerNameExW"
+                },
+                {
+                    "address": "0x180078c58",
+                    "function": "SetComputerNameEx2W"
+                }
+            ],
             "api-ms-win-core-largeinteger-l1-1-0.dll": [
                 {
                     "address": "0x180077dc0",
                     "function": "MulDiv"
                 }
             ],
-            "api-ms-win-core-threadpool-legacy-l1-1-0.dll": [
+            "api-ms-win-core-errorhandling-l1-1-0.dll": [
                 {
-                    "address": "0x180078cb0",
-                    "function": "UnregisterWaitEx"
+                    "address": "0x180077890",
+                    "function": "SetUnhandledExceptionFilter"
                 },
                 {
-                    "address": "0x180078cb8",
-                    "function": "ChangeTimerQueueTimer"
+                    "address": "0x180077898",
+                    "function": "GetErrorMode"
                 },
                 {
-                    "address": "0x180078cc0",
-                    "function": "CreateTimerQueue"
+                    "address": "0x1800778a0",
+                    "function": "RaiseException"
                 },
                 {
-                    "address": "0x180078cc8",
-                    "function": "DeleteTimerQueueEx"
+                    "address": "0x1800778a8",
+                    "function": "SetErrorMode"
                 },
                 {
-                    "address": "0x180078cd0",
-                    "function": "DeleteTimerQueueTimer"
+                    "address": "0x1800778b0",
+                    "function": "GetLastError"
                 },
                 {
-                    "address": "0x180078cd8",
-                    "function": "CreateTimerQueueTimer"
+                    "address": "0x1800778b8",
+                    "function": "UnhandledExceptionFilter"
                 },
                 {
-                    "address": "0x180078ce0",
-                    "function": "QueueUserWorkItem"
+                    "address": "0x1800778c0",
+                    "function": "SetLastError"
                 }
             ],
-            "api-ms-win-core-file-l2-1-0.dll": [
+            "api-ms-win-core-xstate-l2-1-0.dll": [
                 {
-                    "address": "0x180077c10",
-                    "function": "ReadDirectoryChangesW"
+                    "address": "0x180078e40",
+                    "function": "GetEnabledXStateFeatures"
                 },
                 {
-                    "address": "0x180077c18",
-                    "function": "MoveFileWithProgressW"
+                    "address": "0x180078e48",
+                    "function": "CopyContext"
                 },
                 {
-                    "address": "0x180077c20",
-                    "function": "CreateHardLinkW"
+                    "address": "0x180078e50",
+                    "function": "InitializeContext"
                 },
                 {
-                    "address": "0x180077c28",
-                    "function": "CreateDirectoryExW"
+                    "address": "0x180078e58",
+                    "function": "LocateXStateFeature"
                 },
                 {
-                    "address": "0x180077c30",
-                    "function": "ReOpenFile"
+                    "address": "0x180078e60",
+                    "function": "GetXStateFeaturesMask"
                 },
                 {
-                    "address": "0x180077c38",
-                    "function": "GetFileInformationByHandleEx"
-                },
-                {
-                    "address": "0x180077c40",
-                    "function": "CopyFile2"
-                },
-                {
-                    "address": "0x180077c48",
-                    "function": "CopyFileExW"
-                },
-                {
-                    "address": "0x180077c50",
-                    "function": "ReplaceFileW"
-                },
-                {
-                    "address": "0x180077c58",
-                    "function": "MoveFileExW"
-                },
-                {
-                    "address": "0x180077c60",
-                    "function": "CreateSymbolicLinkW"
+                    "address": "0x180078e68",
+                    "function": "SetXStateFeaturesMask"
                 }
             ],
-            "api-ms-win-security-appcontainer-l1-1-0.dll": [
+            "api-ms-win-core-console-l1-2-0.dll": [
                 {
-                    "address": "0x180078ea0",
-                    "function": "GetAppContainerNamedObjectPath"
-                }
-            ],
-            "api-ms-win-core-systemtopology-l1-1-1.dll": [
-                {
-                    "address": "0x180078ca0",
-                    "function": "GetNumaProximityNodeEx"
-                }
-            ],
-            "api-ms-win-core-io-l1-1-1.dll": [
-                {
-                    "address": "0x180077d98",
-                    "function": "CancelSynchronousIo"
+                    "address": "0x180077560",
+                    "function": "FreeConsole"
                 },
                 {
-                    "address": "0x180077da0",
-                    "function": "CancelIo"
+                    "address": "0x180077568",
+                    "function": "PeekConsoleInputA"
+                },
+                {
+                    "address": "0x180077570",
+                    "function": "PeekConsoleInputW"
+                },
+                {
+                    "address": "0x180077578",
+                    "function": "AttachConsole"
                 }
             ],
-            "api-ms-win-core-datetime-l1-1-2.dll": [
+            "api-ms-win-core-datetime-l1-1-1.dll": [
                 {
-                    "address": "0x180077818",
-                    "function": "GetDurationFormatEx"
+                    "address": "0x180077800",
+                    "function": "GetDateFormatEx"
+                },
+                {
+                    "address": "0x180077808",
+                    "function": "GetTimeFormatEx"
                 }
             ],
-            "api-ms-win-core-delayload-l1-1-0.dll": [
+            "api-ms-win-core-profile-l1-1-0.dll": [
                 {
-                    "address": "0x180077880",
-                    "function": "DelayLoadFailureHook"
+                    "address": "0x180078680",
+                    "function": "QueryPerformanceFrequency"
+                },
+                {
+                    "address": "0x180078688",
+                    "function": "QueryPerformanceCounter"
                 }
             ],
-            "api-ms-win-core-threadpool-private-l1-1-0.dll": [
+            "api-ms-win-core-processtopology-l1-1-0.dll": [
                 {
-                    "address": "0x180078cf0",
-                    "function": "RegisterWaitForSingleObjectEx"
+                    "address": "0x180078660",
+                    "function": "SetThreadGroupAffinity"
+                },
+                {
+                    "address": "0x180078668",
+                    "function": "GetProcessGroupAffinity"
+                },
+                {
+                    "address": "0x180078670",
+                    "function": "GetThreadGroupAffinity"
+                }
+            ],
+            "api-ms-win-core-sidebyside-l1-1-0.dll": [
+                {
+                    "address": "0x180078988",
+                    "function": "FindActCtxSectionGuid"
+                },
+                {
+                    "address": "0x180078990",
+                    "function": "DeactivateActCtx"
+                },
+                {
+                    "address": "0x180078998",
+                    "function": "CreateActCtxW"
+                },
+                {
+                    "address": "0x1800789a0",
+                    "function": "ZombifyActCtx"
+                },
+                {
+                    "address": "0x1800789a8",
+                    "function": "AddRefActCtx"
+                },
+                {
+                    "address": "0x1800789b0",
+                    "function": "ActivateActCtx"
+                },
+                {
+                    "address": "0x1800789b8",
+                    "function": "ReleaseActCtx"
+                },
+                {
+                    "address": "0x1800789c0",
+                    "function": "GetCurrentActCtx"
+                },
+                {
+                    "address": "0x1800789c8",
+                    "function": "QueryActCtxSettingsW"
+                },
+                {
+                    "address": "0x1800789d0",
+                    "function": "FindActCtxSectionStringW"
+                },
+                {
+                    "address": "0x1800789d8",
+                    "function": "QueryActCtxW"
+                }
+            ],
+            "api-ms-win-core-namedpipe-l1-2-1.dll": [
+                {
+                    "address": "0x1800782b0",
+                    "function": "GetNamedPipeHandleStateW"
                 }
             ],
             "api-ms-win-core-memory-l1-1-0.dll": [
@@ -17041,6 +17944,16 @@
                     "function": "WriteProcessMemory"
                 }
             ],
+            "api-ms-win-core-fibers-l2-1-1.dll": [
+                {
+                    "address": "0x180077940",
+                    "function": "CreateFiberEx"
+                },
+                {
+                    "address": "0x180077948",
+                    "function": "ConvertThreadToFiberEx"
+                }
+            ],
             "api-ms-win-core-timezone-l1-1-0.dll": [
                 {
                     "address": "0x180078d00",
@@ -17077,80 +17990,6 @@
                 {
                     "address": "0x180078d40",
                     "function": "GetTimeZoneInformationForYear"
-                }
-            ],
-            "api-ms-win-core-sysinfo-l1-2-3.dll": [
-                {
-                    "address": "0x180078c68",
-                    "function": "SetComputerNameA"
-                },
-                {
-                    "address": "0x180078c70",
-                    "function": "SetComputerNameW"
-                },
-                {
-                    "address": "0x180078c78",
-                    "function": "SetComputerNameExA"
-                }
-            ],
-            "api-ms-win-core-console-l2-2-0.dll": [
-                {
-                    "address": "0x180077698",
-                    "function": "SetConsoleTitleA"
-                },
-                {
-                    "address": "0x1800776a0",
-                    "function": "GetConsoleOriginalTitleA"
-                },
-                {
-                    "address": "0x1800776a8",
-                    "function": "GetConsoleOriginalTitleW"
-                },
-                {
-                    "address": "0x1800776b0",
-                    "function": "GetConsoleTitleA"
-                },
-                {
-                    "address": "0x1800776b8",
-                    "function": "GetConsoleTitleW"
-                },
-                {
-                    "address": "0x1800776c0",
-                    "function": "SetConsoleTitleW"
-                }
-            ],
-            "api-ms-win-core-memory-l1-1-2.dll": [
-                {
-                    "address": "0x180078218",
-                    "function": "FreeUserPhysicalPages"
-                },
-                {
-                    "address": "0x180078220",
-                    "function": "MapUserPhysicalPages"
-                },
-                {
-                    "address": "0x180078228",
-                    "function": "AllocateUserPhysicalPagesNuma"
-                },
-                {
-                    "address": "0x180078230",
-                    "function": "RegisterBadMemoryNotification"
-                },
-                {
-                    "address": "0x180078238",
-                    "function": "UnregisterBadMemoryNotification"
-                },
-                {
-                    "address": "0x180078240",
-                    "function": "GetMemoryErrorHandlingCapabilities"
-                },
-                {
-                    "address": "0x180078248",
-                    "function": "AllocateUserPhysicalPages"
-                },
-                {
-                    "address": "0x180078250",
-                    "function": "VirtualAllocExNuma"
                 }
             ],
             "api-ms-win-core-processthreads-l1-1-0.dll": [
@@ -17311,902 +18150,62 @@
                     "function": "GetStartupInfoW"
                 }
             ],
-            "api-ms-win-core-libraryloader-l2-1-0.dll": [
+            "api-ms-win-core-datetime-l1-1-2.dll": [
                 {
-                    "address": "0x180077ec8",
-                    "function": "LoadPackagedLibrary"
+                    "address": "0x180077818",
+                    "function": "GetDurationFormatEx"
                 }
             ],
-            "api-ms-win-core-util-l1-1-0.dll": [
+            "api-ms-win-core-debug-l1-1-1.dll": [
                 {
-                    "address": "0x180078d50",
-                    "function": "Beep"
+                    "address": "0x180077850",
+                    "function": "CheckRemoteDebuggerPresent"
+                },
+                {
+                    "address": "0x180077858",
+                    "function": "DebugActiveProcessStop"
+                },
+                {
+                    "address": "0x180077860",
+                    "function": "DebugActiveProcess"
+                },
+                {
+                    "address": "0x180077868",
+                    "function": "ContinueDebugEvent"
+                },
+                {
+                    "address": "0x180077870",
+                    "function": "WaitForDebugEvent"
                 }
             ],
-            "api-ms-win-core-job-l1-1-0.dll": [
+            "api-ms-win-security-base-l1-2-0.dll": [
                 {
-                    "address": "0x180077db0",
-                    "function": "IsProcessInJob"
-                }
-            ],
-            "api-ms-win-core-processsnapshot-l1-1-0.dll": [
-                {
-                    "address": "0x180078408",
-                    "function": "PssWalkMarkerSeekToBeginning"
-                },
-                {
-                    "address": "0x180078410",
-                    "function": "PssWalkMarkerSetPosition"
-                },
-                {
-                    "address": "0x180078418",
-                    "function": "PssCaptureSnapshot"
-                },
-                {
-                    "address": "0x180078420",
-                    "function": "PssWalkMarkerGetPosition"
-                },
-                {
-                    "address": "0x180078428",
-                    "function": "PssWalkMarkerFree"
-                },
-                {
-                    "address": "0x180078430",
-                    "function": "PssFreeSnapshot"
-                },
-                {
-                    "address": "0x180078438",
-                    "function": "PssWalkMarkerCreate"
-                },
-                {
-                    "address": "0x180078440",
-                    "function": "PssDuplicateSnapshot"
-                },
-                {
-                    "address": "0x180078448",
-                    "function": "PssWalkSnapshot"
-                },
-                {
-                    "address": "0x180078450",
-                    "function": "PssQuerySnapshot"
-                }
-            ],
-            "api-ms-win-core-comm-l1-1-0.dll": [
-                {
-                    "address": "0x180077458",
-                    "function": "GetCommTimeouts"
-                },
-                {
-                    "address": "0x180077460",
-                    "function": "PurgeComm"
-                },
-                {
-                    "address": "0x180077468",
-                    "function": "SetCommBreak"
-                },
-                {
-                    "address": "0x180077470",
-                    "function": "GetCommProperties"
-                },
-                {
-                    "address": "0x180077478",
-                    "function": "SetCommMask"
-                },
-                {
-                    "address": "0x180077480",
-                    "function": "SetCommState"
-                },
-                {
-                    "address": "0x180077488",
-                    "function": "SetCommTimeouts"
-                },
-                {
-                    "address": "0x180077490",
-                    "function": "SetupComm"
-                },
-                {
-                    "address": "0x180077498",
-                    "function": "TransmitCommChar"
-                },
-                {
-                    "address": "0x1800774a0",
-                    "function": "WaitCommEvent"
-                },
-                {
-                    "address": "0x1800774a8",
-                    "function": "GetCommModemStatus"
-                },
-                {
-                    "address": "0x1800774b0",
-                    "function": "GetCommMask"
-                },
-                {
-                    "address": "0x1800774b8",
-                    "function": "GetCommConfig"
-                },
-                {
-                    "address": "0x1800774c0",
-                    "function": "EscapeCommFunction"
-                },
-                {
-                    "address": "0x1800774c8",
-                    "function": "ClearCommError"
-                },
-                {
-                    "address": "0x1800774d0",
-                    "function": "ClearCommBreak"
-                },
-                {
-                    "address": "0x1800774d8",
-                    "function": "GetCommState"
-                },
-                {
-                    "address": "0x1800774e0",
-                    "function": "SetCommConfig"
-                }
-            ],
-            "api-ms-win-core-sidebyside-l1-1-0.dll": [
-                {
-                    "address": "0x180078988",
-                    "function": "FindActCtxSectionGuid"
-                },
-                {
-                    "address": "0x180078990",
-                    "function": "DeactivateActCtx"
-                },
-                {
-                    "address": "0x180078998",
-                    "function": "CreateActCtxW"
-                },
-                {
-                    "address": "0x1800789a0",
-                    "function": "ZombifyActCtx"
-                },
-                {
-                    "address": "0x1800789a8",
-                    "function": "AddRefActCtx"
-                },
-                {
-                    "address": "0x1800789b0",
-                    "function": "ActivateActCtx"
-                },
-                {
-                    "address": "0x1800789b8",
-                    "function": "ReleaseActCtx"
-                },
-                {
-                    "address": "0x1800789c0",
-                    "function": "GetCurrentActCtx"
-                },
-                {
-                    "address": "0x1800789c8",
-                    "function": "QueryActCtxSettingsW"
-                },
-                {
-                    "address": "0x1800789d0",
-                    "function": "FindActCtxSectionStringW"
-                },
-                {
-                    "address": "0x1800789d8",
-                    "function": "QueryActCtxW"
-                }
-            ],
-            "api-ms-win-core-datetime-l1-1-0.dll": [
-                {
-                    "address": "0x1800777d8",
-                    "function": "GetTimeFormatA"
-                },
-                {
-                    "address": "0x1800777e0",
-                    "function": "GetTimeFormatW"
-                },
-                {
-                    "address": "0x1800777e8",
-                    "function": "GetDateFormatW"
-                },
-                {
-                    "address": "0x1800777f0",
-                    "function": "GetDateFormatA"
-                }
-            ],
-            "api-ms-win-core-registry-l1-1-0.dll": [
-                {
-                    "address": "0x1800787c0",
-                    "function": "RegLoadMUIStringW"
-                },
-                {
-                    "address": "0x1800787c8",
-                    "function": "RegLoadMUIStringA"
-                },
-                {
-                    "address": "0x1800787d0",
-                    "function": "RegNotifyChangeKeyValue"
-                },
-                {
-                    "address": "0x1800787d8",
-                    "function": "RegLoadKeyA"
-                },
-                {
-                    "address": "0x1800787e0",
-                    "function": "RegGetValueA"
-                },
-                {
-                    "address": "0x1800787e8",
-                    "function": "RegFlushKey"
-                },
-                {
-                    "address": "0x1800787f0",
-                    "function": "RegEnumValueW"
-                },
-                {
-                    "address": "0x1800787f8",
-                    "function": "RegEnumValueA"
-                },
-                {
-                    "address": "0x180078800",
-                    "function": "RegOpenCurrentUser"
-                },
-                {
-                    "address": "0x180078808",
-                    "function": "RegGetKeySecurity"
-                },
-                {
-                    "address": "0x180078810",
-                    "function": "RegOpenKeyExA"
-                },
-                {
-                    "address": "0x180078818",
-                    "function": "RegEnumKeyExW"
-                },
-                {
-                    "address": "0x180078820",
-                    "function": "RegLoadKeyW"
-                },
-                {
-                    "address": "0x180078828",
-                    "function": "RegOpenKeyExW"
-                },
-                {
-                    "address": "0x180078830",
-                    "function": "RegGetValueW"
-                },
-                {
-                    "address": "0x180078838",
-                    "function": "RegCloseKey"
-                },
-                {
-                    "address": "0x180078840",
-                    "function": "RegCopyTreeW"
-                },
-                {
-                    "address": "0x180078848",
-                    "function": "RegCreateKeyExA"
-                },
-                {
-                    "address": "0x180078850",
-                    "function": "RegCreateKeyExW"
-                },
-                {
-                    "address": "0x180078858",
-                    "function": "RegDeleteKeyExA"
-                },
-                {
-                    "address": "0x180078860",
-                    "function": "RegDeleteKeyExW"
-                },
-                {
-                    "address": "0x180078868",
-                    "function": "RegDeleteTreeA"
-                },
-                {
-                    "address": "0x180078870",
-                    "function": "RegDeleteTreeW"
-                },
-                {
-                    "address": "0x180078878",
-                    "function": "RegDeleteValueA"
-                },
-                {
-                    "address": "0x180078880",
-                    "function": "RegDeleteValueW"
-                },
-                {
-                    "address": "0x180078888",
-                    "function": "RegDisablePredefinedCacheEx"
-                },
-                {
-                    "address": "0x180078890",
-                    "function": "RegOpenUserClassesRoot"
-                },
-                {
-                    "address": "0x180078898",
-                    "function": "RegLoadAppKeyW"
-                },
-                {
-                    "address": "0x1800788a0",
-                    "function": "RegUnLoadKeyW"
-                },
-                {
-                    "address": "0x1800788a8",
-                    "function": "RegUnLoadKeyA"
-                },
-                {
-                    "address": "0x1800788b0",
-                    "function": "RegSetValueExW"
-                },
-                {
-                    "address": "0x1800788b8",
-                    "function": "RegSetValueExA"
-                },
-                {
-                    "address": "0x1800788c0",
-                    "function": "RegSetKeySecurity"
-                },
-                {
-                    "address": "0x1800788c8",
-                    "function": "RegSaveKeyExW"
-                },
-                {
-                    "address": "0x1800788d0",
-                    "function": "RegSaveKeyExA"
-                },
-                {
-                    "address": "0x1800788d8",
-                    "function": "RegRestoreKeyW"
-                },
-                {
-                    "address": "0x1800788e0",
-                    "function": "RegRestoreKeyA"
-                },
-                {
-                    "address": "0x1800788e8",
-                    "function": "RegQueryValueExW"
-                },
-                {
-                    "address": "0x1800788f0",
-                    "function": "RegQueryValueExA"
-                },
-                {
-                    "address": "0x1800788f8",
-                    "function": "RegQueryInfoKeyW"
-                },
-                {
-                    "address": "0x180078900",
-                    "function": "RegQueryInfoKeyA"
-                },
-                {
-                    "address": "0x180078908",
-                    "function": "RegEnumKeyExA"
-                }
-            ],
-            "api-ms-win-core-namespace-l1-1-0.dll": [
-                {
-                    "address": "0x1800782d0",
-                    "function": "CreateBoundaryDescriptorW"
-                },
-                {
-                    "address": "0x1800782d8",
-                    "function": "AddSIDToBoundaryDescriptor"
-                },
-                {
-                    "address": "0x1800782e0",
-                    "function": "CreatePrivateNamespaceW"
-                },
-                {
-                    "address": "0x1800782e8",
-                    "function": "DeleteBoundaryDescriptor"
-                },
-                {
-                    "address": "0x1800782f0",
-                    "function": "ClosePrivateNamespace"
-                },
-                {
-                    "address": "0x1800782f8",
-                    "function": "OpenPrivateNamespaceW"
-                }
-            ],
-            "api-ms-win-core-sysinfo-l1-1-0.dll": [
-                {
-                    "address": "0x180078b78",
-                    "function": "GetTickCount"
-                },
-                {
-                    "address": "0x180078b80",
-                    "function": "GetLogicalProcessorInformation"
-                },
-                {
-                    "address": "0x180078b88",
-                    "function": "GetLogicalProcessorInformationEx"
-                },
-                {
-                    "address": "0x180078b90",
-                    "function": "SetLocalTime"
-                },
-                {
-                    "address": "0x180078b98",
-                    "function": "GlobalMemoryStatusEx"
-                },
-                {
-                    "address": "0x180078ba0",
-                    "function": "GetWindowsDirectoryW"
-                },
-                {
-                    "address": "0x180078ba8",
-                    "function": "GetWindowsDirectoryA"
-                },
-                {
-                    "address": "0x180078bb0",
-                    "function": "GetVersionExW"
-                },
-                {
-                    "address": "0x180078bb8",
-                    "function": "GetVersionExA"
-                },
-                {
-                    "address": "0x180078bc0",
-                    "function": "GetVersion"
-                },
-                {
-                    "address": "0x180078bc8",
-                    "function": "GetSystemTimeAsFileTime"
-                },
-                {
-                    "address": "0x180078bd0",
-                    "function": "GetSystemTimeAdjustment"
-                },
-                {
-                    "address": "0x180078bd8",
-                    "function": "GetSystemTime"
-                },
-                {
-                    "address": "0x180078be0",
-                    "function": "GetSystemInfo"
-                },
-                {
-                    "address": "0x180078be8",
-                    "function": "GetLocalTime"
-                },
-                {
-                    "address": "0x180078bf0",
-                    "function": "GetComputerNameExW"
-                },
-                {
-                    "address": "0x180078bf8",
-                    "function": "GetComputerNameExA"
-                }
-            ],
-            "api-ms-win-core-libraryloader-l1-2-0.dll": [
-                {
-                    "address": "0x180077dd0",
-                    "function": "FindResourceExW"
-                },
-                {
-                    "address": "0x180077dd8",
-                    "function": "EnumResourceNamesExW"
-                },
-                {
-                    "address": "0x180077de0",
-                    "function": "DisableThreadLibraryCalls"
-                },
-                {
-                    "address": "0x180077de8",
-                    "function": "GetProcAddress"
-                },
-                {
-                    "address": "0x180077df0",
-                    "function": "LoadLibraryExW"
-                },
-                {
-                    "address": "0x180077df8",
-                    "function": "FreeLibrary"
-                },
-                {
-                    "address": "0x180077e00",
-                    "function": "FreeLibraryAndExitThread"
-                },
-                {
-                    "address": "0x180077e08",
-                    "function": "FreeResource"
-                },
-                {
-                    "address": "0x180077e10",
-                    "function": "GetModuleFileNameA"
-                },
-                {
-                    "address": "0x180077e18",
-                    "function": "GetModuleFileNameW"
-                },
-                {
-                    "address": "0x180077e20",
-                    "function": "EnumResourceTypesExW"
-                },
-                {
-                    "address": "0x180077e28",
-                    "function": "GetModuleHandleW"
-                },
-                {
-                    "address": "0x180077e30",
-                    "function": "GetModuleHandleExA"
-                },
-                {
-                    "address": "0x180077e38",
-                    "function": "GetModuleHandleExW"
-                },
-                {
-                    "address": "0x180077e40",
-                    "function": "LoadLibraryExA"
-                },
-                {
-                    "address": "0x180077e48",
-                    "function": "LoadResource"
-                },
-                {
-                    "address": "0x180077e50",
-                    "function": "EnumResourceTypesExA"
-                },
-                {
-                    "address": "0x180077e58",
-                    "function": "EnumResourceNamesExA"
-                },
-                {
-                    "address": "0x180077e60",
-                    "function": "FindStringOrdinal"
-                },
-                {
-                    "address": "0x180077e68",
-                    "function": "EnumResourceLanguagesExW"
-                },
-                {
-                    "address": "0x180077e70",
-                    "function": "LockResource"
-                },
-                {
-                    "address": "0x180077e78",
-                    "function": "EnumResourceLanguagesExA"
-                },
-                {
-                    "address": "0x180077e80",
-                    "function": "SizeofResource"
-                },
-                {
-                    "address": "0x180077e88",
-                    "function": "GetModuleHandleA"
-                }
-            ],
-            "api-ms-win-core-datetime-l1-1-1.dll": [
-                {
-                    "address": "0x180077800",
-                    "function": "GetDateFormatEx"
-                },
-                {
-                    "address": "0x180077808",
-                    "function": "GetTimeFormatEx"
-                }
-            ],
-            "api-ms-win-core-file-l2-1-2.dll": [
-                {
-                    "address": "0x180077c80",
-                    "function": "CreateHardLinkA"
-                },
-                {
-                    "address": "0x180077c88",
-                    "function": "CopyFileW"
-                }
-            ],
-            "api-ms-win-core-windowserrorreporting-l1-1-1.dll": [
-                {
-                    "address": "0x180078da8",
-                    "function": "WerRegisterExcludedMemoryBlock"
-                },
-                {
-                    "address": "0x180078db0",
-                    "function": "WerUnregisterExcludedMemoryBlock"
-                },
-                {
-                    "address": "0x180078db8",
-                    "function": "WerRegisterCustomMetadata"
-                },
-                {
-                    "address": "0x180078dc0",
-                    "function": "WerUnregisterAdditionalProcess"
-                },
-                {
-                    "address": "0x180078dc8",
-                    "function": "WerRegisterAdditionalProcess"
-                },
-                {
-                    "address": "0x180078dd0",
-                    "function": "WerUnregisterCustomMetadata"
-                }
-            ],
-            "api-ms-win-core-psapi-l1-1-0.dll": [
-                {
-                    "address": "0x1800786e0",
-                    "function": "K32GetWsChanges"
-                },
-                {
-                    "address": "0x1800786e8",
-                    "function": "K32GetWsChangesEx"
-                },
-                {
-                    "address": "0x1800786f0",
-                    "function": "K32GetMappedFileNameW"
-                },
-                {
-                    "address": "0x1800786f8",
-                    "function": "K32EnumDeviceDrivers"
-                },
-                {
-                    "address": "0x180078700",
-                    "function": "K32QueryWorkingSetEx"
-                },
-                {
-                    "address": "0x180078708",
-                    "function": "K32GetDeviceDriverFileNameW"
-                },
-                {
-                    "address": "0x180078710",
-                    "function": "K32GetProcessMemoryInfo"
-                },
-                {
-                    "address": "0x180078718",
-                    "function": "K32GetPerformanceInfo"
-                },
-                {
-                    "address": "0x180078720",
-                    "function": "K32EnumPageFilesW"
-                },
-                {
-                    "address": "0x180078728",
-                    "function": "K32GetProcessImageFileNameW"
-                },
-                {
-                    "address": "0x180078730",
-                    "function": "K32InitializeProcessForWsWatch"
-                },
-                {
-                    "address": "0x180078738",
-                    "function": "K32QueryWorkingSet"
-                },
-                {
-                    "address": "0x180078740",
-                    "function": "K32EmptyWorkingSet"
-                },
-                {
-                    "address": "0x180078748",
-                    "function": "K32GetModuleInformation"
-                },
-                {
-                    "address": "0x180078750",
-                    "function": "K32GetModuleFileNameExW"
-                },
-                {
-                    "address": "0x180078758",
-                    "function": "K32GetModuleBaseNameW"
-                },
-                {
-                    "address": "0x180078760",
-                    "function": "K32EnumProcessModulesEx"
-                },
-                {
-                    "address": "0x180078768",
-                    "function": "K32EnumProcessModules"
-                },
-                {
-                    "address": "0x180078770",
-                    "function": "K32GetDeviceDriverBaseNameW"
-                },
-                {
-                    "address": "0x180078778",
-                    "function": "QueryFullProcessImageNameW"
-                },
-                {
-                    "address": "0x180078780",
-                    "function": "K32EnumProcesses"
-                }
-            ],
-            "api-ms-win-core-io-l1-1-0.dll": [
-                {
-                    "address": "0x180077d58",
-                    "function": "GetQueuedCompletionStatusEx"
-                },
-                {
-                    "address": "0x180077d60",
-                    "function": "GetOverlappedResult"
-                },
-                {
-                    "address": "0x180077d68",
-                    "function": "PostQueuedCompletionStatus"
-                },
-                {
-                    "address": "0x180077d70",
-                    "function": "CreateIoCompletionPort"
-                },
-                {
-                    "address": "0x180077d78",
-                    "function": "CancelIoEx"
-                },
-                {
-                    "address": "0x180077d80",
-                    "function": "GetQueuedCompletionStatus"
-                },
-                {
-                    "address": "0x180077d88",
-                    "function": "DeviceIoControl"
-                }
-            ],
-            "api-ms-win-core-console-l3-2-0.dll": [
-                {
-                    "address": "0x1800776d0",
-                    "function": "SetConsoleNumberOfCommandsA"
-                },
-                {
-                    "address": "0x1800776d8",
-                    "function": "SetConsoleHistoryInfo"
-                },
-                {
-                    "address": "0x1800776e0",
-                    "function": "SetConsoleDisplayMode"
-                },
-                {
-                    "address": "0x1800776e8",
-                    "function": "GetNumberOfConsoleMouseButtons"
-                },
-                {
-                    "address": "0x1800776f0",
-                    "function": "GetCurrentConsoleFontEx"
-                },
-                {
-                    "address": "0x1800776f8",
-                    "function": "GetCurrentConsoleFont"
-                },
-                {
-                    "address": "0x180077700",
-                    "function": "GetConsoleWindow"
-                },
-                {
-                    "address": "0x180077708",
-                    "function": "GetConsoleSelectionInfo"
-                },
-                {
-                    "address": "0x180077710",
-                    "function": "GetConsoleProcessList"
-                },
-                {
-                    "address": "0x180077718",
-                    "function": "GetConsoleHistoryInfo"
-                },
-                {
-                    "address": "0x180077720",
-                    "function": "GetConsoleFontSize"
-                },
-                {
-                    "address": "0x180077728",
-                    "function": "GetConsoleDisplayMode"
-                },
-                {
-                    "address": "0x180077730",
-                    "function": "SetCurrentConsoleFontEx"
-                },
-                {
-                    "address": "0x180077738",
-                    "function": "GetConsoleCommandHistoryLengthW"
-                },
-                {
-                    "address": "0x180077740",
-                    "function": "GetConsoleCommandHistoryLengthA"
-                },
-                {
-                    "address": "0x180077748",
-                    "function": "GetConsoleCommandHistoryA"
-                },
-                {
-                    "address": "0x180077750",
-                    "function": "GetConsoleAliasesW"
-                },
-                {
-                    "address": "0x180077758",
-                    "function": "GetConsoleAliasesLengthW"
-                },
-                {
-                    "address": "0x180077760",
-                    "function": "GetConsoleAliasesLengthA"
-                },
-                {
-                    "address": "0x180077768",
-                    "function": "GetConsoleAliasesA"
-                },
-                {
-                    "address": "0x180077770",
-                    "function": "GetConsoleAliasW"
-                },
-                {
-                    "address": "0x180077778",
-                    "function": "GetConsoleAliasExesW"
-                },
-                {
-                    "address": "0x180077780",
-                    "function": "GetConsoleAliasExesLengthW"
-                },
-                {
-                    "address": "0x180077788",
-                    "function": "GetConsoleAliasExesLengthA"
-                },
-                {
-                    "address": "0x180077790",
-                    "function": "GetConsoleAliasExesA"
-                },
-                {
-                    "address": "0x180077798",
-                    "function": "GetConsoleAliasA"
-                },
-                {
-                    "address": "0x1800777a0",
-                    "function": "ExpungeConsoleCommandHistoryW"
-                },
-                {
-                    "address": "0x1800777a8",
-                    "function": "ExpungeConsoleCommandHistoryA"
-                },
-                {
-                    "address": "0x1800777b0",
-                    "function": "AddConsoleAliasW"
-                },
-                {
-                    "address": "0x1800777b8",
-                    "function": "AddConsoleAliasA"
-                },
-                {
-                    "address": "0x1800777c0",
-                    "function": "SetConsoleNumberOfCommandsW"
-                },
-                {
-                    "address": "0x1800777c8",
-                    "function": "GetConsoleCommandHistoryW"
-                }
-            ],
-            "api-ms-win-core-file-l1-2-1.dll": [
-                {
-                    "address": "0x180077bb8",
-                    "function": "GetCompressedFileSizeW"
-                },
-                {
-                    "address": "0x180077bc0",
-                    "function": "SetFileIoOverlappedRange"
-                },
-                {
-                    "address": "0x180077bc8",
-                    "function": "GetCompressedFileSizeA"
-                }
-            ],
-            "api-ms-win-core-sysinfo-l1-2-0.dll": [
-                {
-                    "address": "0x180078c08",
-                    "function": "SetComputerNameExW"
+                    "address": "0x180078ee0",
+                    "function": "CheckTokenCapability"
                 },
                 {
-                    "address": "0x180078c10",
-                    "function": "SetSystemTime"
+                    "address": "0x180078ee8",
+                    "function": "CheckTokenMembershipEx"
                 },
                 {
-                    "address": "0x180078c18",
-                    "function": "GetProductInfo"
+                    "address": "0x180078ef0",
+                    "function": "AddScopedPolicyIDAce"
                 },
                 {
-                    "address": "0x180078c20",
-                    "function": "GetNativeSystemInfo"
+                    "address": "0x180078ef8",
+                    "function": "GetAppContainerAce"
                 },
                 {
-                    "address": "0x180078c28",
-                    "function": "GetSystemFirmwareTable"
+                    "address": "0x180078f00",
+                    "function": "GetCachedSigningLevel"
                 },
                 {
-                    "address": "0x180078c30",
-                    "function": "EnumSystemFirmwareTables"
+                    "address": "0x180078f08",
+                    "function": "SetCachedSigningLevel"
                 },
                 {
-                    "address": "0x180078c38",
-                    "function": "GetSystemTimePreciseAsFileTime"
+                    "address": "0x180078f10",
+                    "function": "AddResourceAttributeAce"
                 }
             ]
         },
@@ -25156,5 +25155,9 @@
             "ThreadControl__Context",
             "SEH__vectored"
         ]
+    },
+    "fuzzy_hash": {
+        "ssdeep": "12288:DZQTGCmR3T24UAAypJW7cnEmsC4OeK6Nba2iNAyv6eI9FErsT7/Sag:D+O3pU+g7VCreKKXv0xJrsT7/Sag",
+        "tlsh": "7DE47C12BF990599E9BBC27DC1524633FAB2B849132057CF52548A7D1E1BBE0BB3E341"
     }
 }
