@@ -13,11 +13,8 @@ $ pip3 install ssdeep
 ```
 ## Usage
 ```bash
-$ python byeongal_static.py <file_path> 
+$ python3 byeongal_static.py <file_path> 
 ```
-
-
-
 ## Update Log
 ### Update 2018.12
 * File Hash Information ( md5, sha1, sha256 )
@@ -35,13 +32,16 @@ $ python byeongal_static.py <file_path>
   * Anti Debugging
 * Fuzzy Hash
   * ssdeep
-
+  * tlsh
+  
 ## Tested On
 * Ubuntu 16.04 LTS
+* Python 3.6.7
 
 ## Reference
 To create this software, I refer to the following software:
 * [PEframe 5.0.1](https://github.com/guelfoweb/peframe)
+* [TLSH 3.9.0](https://github.com/trendmicro/tlsh)
 
 ## Contact
 If you want to contact me, please send me an email to my email address(corea_kyj@naver.com).
