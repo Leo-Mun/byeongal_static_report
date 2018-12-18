@@ -3,10 +3,20 @@ Byeongal Static Report is an automated static analysis open source software. You
 * File Hash ( md5, sha1, and sha256 )
 * PE File Information ( Section, Compile Information, Resources, Import, Export, API and imphash )
 
+## Preconfiguration
+To use **Byeongal Static Report**, you have to install following python modules.
+```bash
+$ pip3 install pefile
+$ pip3 install python-magic 
+$ pip3 install yara
+$ pip3 install ssdeep
+```
 ## Usage
 ```bash
 $ python byeongal_static.py <file_path> 
 ```
+
+
 
 ## Update Log
 ### Update 2018.12
