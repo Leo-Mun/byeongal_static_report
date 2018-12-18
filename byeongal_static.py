@@ -10,9 +10,10 @@ import chardet
 import yara
 import string
 import ssdeep
+import tlsh
 
 _ROOT = os.path.abspath(os.path.dirname(__file__))
-_USER_DB = os.path.join(_ROOT, 'signatures', 'userdb_panda.txt')
+_USER_DB = os.path.join(_ROOT, 'signatures', 'userdb.txt')
 _APIALERT = os.path.join(_ROOT, 'signatures', 'apialertv6.1.txt')
 _ANTIDEBUG = os.path.join(_ROOT, 'signatures', 'AntiDebugging.yara')
 
@@ -226,6 +227,7 @@ def get_fuzzy_hash( file_path ) :
     with open(file_path, 'rb') as f :
         context = f.read()
     ret['ssdeep'] = ssdeep.hash(context)
+    ret['tlsh'] = tlsh.hash(context)
     return ret
 
 def run( file_path ) :
@@ -259,7 +261,7 @@ def run( file_path ) :
     ## Compile Time
     json_obj['pe_info']['compile_time'] = get_compile_time(pe)
     ## Packer Info
-    json_obj['pe_info']['packer_info'] = get_packer_info( pe )
+    #json_obj['pe_info']['packer_info'] = get_packer_info( pe )
     ## Sessions Number
     json_obj['pe_info']['sections_number'] = get_sections_number(pe)
     ## Resources
