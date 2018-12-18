@@ -222,10 +222,8 @@ def get_string( file_data ) :
             found_str = ""
     return ret
 
-def get_fuzzy_hash( file_path ) :
+def get_fuzzy_hash( context ) :
     ret = dict()
-    with open(file_path, 'rb') as f :
-        context = f.read()
     ret['ssdeep'] = ssdeep.hash(context)
     ret['tlsh'] = tlsh.hash(context)
     return ret
@@ -281,7 +279,7 @@ def run( file_path ) :
     json_obj['yara']['anti_debug_info'] = get_anti_debug_info( file_data )
 
     # Fuzzy Hash
-    json_obj['fuzzy_hash'] = get_fuzzy_hash( file_path )
+    json_obj['fuzzy_hash'] = get_fuzzy_hash( file_data )
 
     # Save report file
     with open("{}.json".format(json_obj['hash']['sha256']), 'w') as f :
