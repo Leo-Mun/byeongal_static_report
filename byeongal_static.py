@@ -184,7 +184,6 @@ def get_resources_info( pe ) :
 def get_sections_info( pe ) :
     array = []
     for section in pe.sections:
-        section.get_entropy()
         if section.SizeOfRawData == 0 or ( 0 < section.get_entropy() < 1) or section.get_entropy() > 7 :
             suspicious = True
         else:
@@ -215,13 +214,14 @@ def get_import_function( pe ) :
             for imp in entry.imports:
                 address = hex(imp.address)
                 function = imp.name
+                ordinal = imp.ordinal
                 encoding_option = chardet.detect(function)['encoding']
                 if encoding_option == None:
                     continue
                 function = function.decode(encoding_option, 'ignore').replace("\u0000","")
                 if dll not in library:
                     library.add(dll)
-                array.append({"library": dll, "address": address, "function": function})
+                array.append({"library": dll, "address": address, "function": function, "ordinal" : ordinal})
 
         for key in library:
             libdict[key] = []
@@ -229,7 +229,7 @@ def get_import_function( pe ) :
         for lib in library:
             for item in array:
                 if lib == item['library']:
-                    libdict[lib].append({"address": item['address'], "function": item['function']})
+                    libdict[lib].append({"address": item['address'], "function": item['function'], "ordinal" : item['ordinal']})
     except:
         pass
 
