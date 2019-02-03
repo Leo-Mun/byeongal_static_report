@@ -36,13 +36,16 @@ $ python3 byeongal_static.py <file_path>
   
 ## Tested On
 * Ubuntu 16.04 LTS
-* Python 3.6.7
+* Python 3.6.8
 
 ## Reference
 To create this software, I refer to the following software:
 * [PEframe 5.0.1](https://github.com/guelfoweb/peframe)
-* [TLSH 3.9.0](https://github.com/trendmicro/tlsh)
-
+* [TLSH](https://github.com/trendmicro/tlsh)
+* [pefile](https://github.com/erocarrera/pefile)
+* [python-magic](https://github.com/ahupp/python-magic)
+* [yara-python](https://github.com/VirusTotal/yara-python)
+* [ssdeep Python Wrapper](https://github.com/DinoTools/python-ssdeep)
 ## Contact
 If you want to contact me, please send me an email to my email address(corea_kyj@naver.com).
 * Ps. I can understand only English and Korean and prefer to use Korean.
