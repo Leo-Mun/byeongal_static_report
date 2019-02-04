@@ -15,21 +15,21 @@ $ pip3 install ssdeep
 ```bash
 $ python3 byeongal_static.py <file_path> 
 ```
-## Update Log
-### Update 2018.12
+## Feature
 * File Hash Information ( md5, sha1, sha256 )
 * File Magic
 * String
 * PE File Information
-  * imphash
-  * Compile Time
-  * Packer Information
-  * Sections Information
-  * Resources Information
-  * Import and Export
-  * API Alert
-* Yara
-  * Anti Debugging
+  * Feature from [IMAGE_FILE_HEADER](https://docs.microsoft.com/en-us/windows/desktop/api/winnt/ns-winnt-image_file_header)
+  * Feature from [IMAGE_OPTIONAL_HEADER](https://docs.microsoft.com/en-us/windows/desktop/api/winnt/ns-winnt-image_optional_header32)
+  * Feature from [IMAGE_DATA_DIRECTORY](https://docs.microsoft.com/en-us/windows/desktop/api/winnt/ns-winnt-image_data_directory)
+  * Import Address Table
+  * Export Address Table
+  * Resources
+  * Sections
+  * Thread Local Storage
+  * Debug
+  * Sertificate
 * Fuzzy Hash
   * ssdeep
   * tlsh
