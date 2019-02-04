@@ -3,17 +3,16 @@ import os
 import pefile
 import peutils
 import hashlib
-import json
 import magic
 import yara
-import string
 import ssdeep
 import tlsh
 
+import simplejson as json
+
 _ROOT = os.path.abspath(os.path.dirname(__file__))
 _USER_DB = os.path.join(_ROOT, 'signatures', 'userdb.txt')
-_APIALERT = os.path.join(_ROOT, 'signatures', 'apialertv6.1.txt')
-_ANTIDEBUG = os.path.join(_ROOT, 'signatures', 'AntiDebugging.yara')
+#_ANTIDEBUG = os.path.join(_ROOT, 'signatures', 'AntiDebugging.yara')
 
 def print_help () :
     pass
@@ -68,7 +67,6 @@ def get_sections_number( pe ):
 
 def get_resources_info( pe ) :
     res_array = []
-    printable = set(string.printable)
     try :
         for resource_type in pe.DIRECTORY_ENTRY_RESOURCE.entries:
             if resource_type.name is not None:
@@ -101,9 +99,9 @@ def get_sections_info( pe ) :
         md5 = section.get_hash_md5()
         sha1 = section.get_hash_sha1()
         spc = suspicious
-        va = hex(section.VirtualAddress)
-        vs = hex(section.Misc_VirtualSize)
-        srd = hex(section.SizeOfRawData)
+        va = section.VirtualAddress
+        vs = section.Misc_VirtualSize
+        srd = section.SizeOfRawData
         entropy = section.get_entropy()
         array.append({"name": scn.decode().strip(' \t\r\n\0'), "hash_md5": md5, "hash_sha1": sha1, "suspicious": spc, "virtual_address": va, "virtual_size": vs, "size_raw_data": srd, "entropy" : entropy})
 
@@ -154,16 +152,16 @@ def get_export_function( pe ) :
         pass
     return array
 
-def get_anti_debug_info( file_data ) :
-    rules = yara.compile(_ANTIDEBUG)
-
-    matches = rules.match(data = file_data)
-
-    ret = []
-    for each in matches :
-        ret.append(each.rule)
-
-    return ret
+# def get_anti_debug_info( file_data ) :
+#     rules = yara.compile(_ANTIDEBUG)
+#
+#     matches = rules.match(data = file_data)
+#
+#     ret = []
+#     for each in matches :
+#         ret.append(each.rule)
+#
+#     return ret
 
 def get_string( file_data ) :
     printable = set(string.printable)
@@ -189,110 +187,34 @@ def get_fuzzy_hash( context ) :
     ret['tlsh'] = tlsh.hash(context)
     return ret
 
-def get_machine_info( pe ) :
-    return hex(pe.FILE_HEADER.Machine)
+def get_feature_from_file_header( pe ) :
+    FILE_HEADER = ['Machine', 'NumberOfSections', 'TimeDateStamp', 'PointerToSymbolTable', 'NumberOfSymbols', 'SizeOfOptionalHeader', 'Characteristics']
+    ret = dict()
+    if hasattr(pe, 'FILE_HEADER') :
+        for each in FILE_HEADER :
+            ret[each] = getattr(pe.FILE_HEADER, each, None)
+    return ret
 
-def get_size_of_optional_header( pe ) :
-    return pe.FILE_HEADER.SizeOfOptionalHeader
+def get_feature_from_optional_header( pe ) :
+    OPTIONAL_HEADER = ['Structure', 'Magic', 'MajorLinkerVersion', 'MinorLinkerVersion', 'SizeOfCode',
+                       'SizeOfInitializedData', 'SizeOfUninitializedData', 'AddressOfEntryPoint', 'BaseOfCode',
+                       'BaseOfData', 'ImageBase', 'SectionAlignment', 'FileAlignment', 'MajorOperatingSystemVersion',
+                       'MinorOperatingSystemVersion', 'MajorImageVersion', 'MinorImageVersion', 'MajorSubsystemVersion',
+                       'MinorSubsystemVersion', 'Reserved1', 'SizeOfImage', 'SizeOfHeaders', 'CheckSum', 'Subsystem',
+                       'DllCharacteristics', 'SizeOfStackReserve', 'SizeOfStackCommit', 'SizeOfHeapReserve',
+                       'SizeOfHeapCommit', 'LoaderFlags', 'NumberOfRvaAndSizes']
+    ret = dict()
+    if hasattr(pe, 'OPTIONAL_HEADER') :
+        for each in OPTIONAL_HEADER :
+            ret[each] = getattr(pe.FILE_HEADER, each, None)
+    return ret
 
-def get_characteristics( pe ) :
-    return hex(pe.FILE_HEADER.Characteristics)
-
-def get_major_linker_version ( pe ) :
-    return pe.OPTIONAL_HEADER.MajorLinkerVersion
-
-def get_minor_linker_version ( pe ) :
-    return pe.OPTIONAL_HEADER.MinorLinkerVersion
-
-def get_size_of_code( pe ) :
-    return pe.OPTIONAL_HEADER.SizeOfCode
-
-def get_size_of_initialized_data(pe) :
-    return pe.OPTIONAL_HEADER.SizeOfInitializedData
-
-def get_size_of_uninitialized_data(pe) :
-    return pe.OPTIONAL_HEADER.SizeOfUninitializedData
-
-def get_address_of_entry_point(pe) :
-    return pe.OPTIONAL_HEADER.AddressOfEntryPoint
-
-def get_base_of_code( pe ) :
-    return pe.OPTIONAL_HEADER.BaseOfCode
-
-def get_base_of_data( pe ) :
-    try :
-        return pe.OPTIONAL_HEADER.BaseOfData
-    except :
-        return None
-
-def get_image_base(pe) :
-    return pe.OPTIONAL_HEADER.ImageBase
-
-def get_section_alignment(pe) :
-    return pe.OPTIONAL_HEADER.SectionAlignment
-
-def get_file_alignment(pe) :
-    return pe.OPTIONAL_HEADER.FileAlignment
-
-def get_major_operating_system_version(pe) :
-    return pe.OPTIONAL_HEADER.MajorOperatingSystemVersion
-
-def get_minor_operating_system_version(pe) :
-    return pe.OPTIONAL_HEADER.MinorOperatingSystemVersion
-
-def get_major_image_version(pe) :
-    return pe.OPTIONAL_HEADER.MajorImageVersion
-
-def get_minor_image_version(pe) :
-    return pe.OPTIONAL_HEADER.MinorImageVersion
-
-def get_major_subsystem_version(pe) :
-    return pe.OPTIONAL_HEADER.MajorSubsystemVersion
-
-def get_minor_subsystem_version(pe) :
-    return pe.OPTIONAL_HEADER.MinorSubsystemVersion
-
-def get_size_of_image(pe) :
-    return pe.OPTIONAL_HEADER.SizeOfImage
-
-def get_size_of_headers(pe) :
-    return pe.OPTIONAL_HEADER.SizeOfHeaders
-
-def get_check_sum(pe) :
-    return pe.OPTIONAL_HEADER.CheckSum
-
-def get_subsystem(pe) :
-    return pe.OPTIONAL_HEADER.Subsystem
-
-def get_dll_characteristics(pe) :
-    return hex(pe.OPTIONAL_HEADER.DllCharacteristics)
-
-def get_size_of_stack_reserve(pe) :
-    return pe.OPTIONAL_HEADER.SizeOfStackReserve
-
-def get_size_of_stack_reserve(pe) :
-    return pe.OPTIONAL_HEADER.SizeOfStackReserve
-
-def get_size_of_stack_commit(pe) :
-    return pe.OPTIONAL_HEADER.SizeOfStackCommit
-
-def get_size_of_heap_reserve(pe) :
-    return pe.OPTIONAL_HEADER.SizeOfHeapReserve
-
-def get_size_of_heap_commit(pe) :
-    return pe.OPTIONAL_HEADER.SizeOfHeapCommit
-
-def get_loader_flags(pe) :
-    return pe.OPTIONAL_HEADER.LoaderFlags
-
-def get_number_of_rva_and_sizes(pe) :
-    return pe.OPTIONAL_HEADER.NumberOfRvaAndSizes
 
 def run( file_path ) :
     with open(file_path, 'rb') as f :
         file_data = f.read()
 
-    pe = pefile.PE(file_path)
+    pe = pefile.PE( data = file_data )
     json_obj = dict()
 
     # File Name
@@ -319,87 +241,17 @@ def run( file_path ) :
     json_obj['pe_info'] = dict()
     ## Imphash
     json_obj['pe_info']['imphash'] = get_imphash(pe)
-    ## Compile Time
-    json_obj['pe_info']['compile_time'] = get_compile_time(pe)
+    ## From File Header
+    json_obj['pe_info']['file_header'] = get_feature_from_file_header( pe )
+    ## From Optional Header
+    json_obj['pe_info']['optional_header'] = get_feature_from_optional_header( pe )
     ## Packer Info
-    json_obj['pe_info']['packer_info'] = get_packer_info( pe )
-    ## Sessions Number
-    json_obj['pe_info']['sections_number'] = get_sections_number(pe)
-    ## Resources
-    json_obj['pe_info']['resources_info'] = get_resources_info(pe)
-    ## Sections Info
-    json_obj['pe_info']['sections_ino'] = get_sections_info(pe)
-    ## Import Function
-    json_obj['pe_info']['import_function'] = get_import_function(pe)
-    ## Export Function
-    json_obj['pe_info']['export_function'] = get_export_function(pe)
-    ## Machine
-    json_obj['pe_info']['machine'] = get_machine_info( pe )
-    ## SizeOfOptionalHeader
-    json_obj['pe_info']['size_of_optional_header'] = get_size_of_optional_header(pe)
-    ## Characteristics
-    json_obj['pe_info']['characteristics'] = get_characteristics(pe)
-    ## MajorLinkerVersion
-    json_obj['pe_info']['major_linker_version'] = get_major_linker_version(pe)
-    ## MinorLinkerVersion
-    json_obj['pe_info']['minor_linker_version'] = get_minor_linker_version(pe)
-    ## SizeOfCode
-    json_obj['pe_info']['size_of_code'] = get_size_of_code(pe)
-    ## SizeOfInitializedData
-    json_obj['pe_info']['size_of_initialized_data'] = get_size_of_initialized_data(pe)
-    ## SizeOfUninitializedData
-    json_obj['pe_info']['size_of_uninitialized_data'] = get_size_of_uninitialized_data(pe)
-    ## AddressOfEntryPoint
-    json_obj['pe_info']['address_of_entry_point'] = get_address_of_entry_point(pe)
-    ## BaseOfCode
-    json_obj['pe_info']['base_of_code'] = get_base_of_code(pe)
-    ## BaseOfData
-    json_obj['pe_info']['base_of_data'] = get_base_of_data(pe)
-    ## ImageBase
-    json_obj['pe_info']['image_base'] = get_image_base(pe)
-    ## SectionAlignment
-    json_obj['pe_info']['section_alignment'] = get_section_alignment(pe)
-    ## FileAlignment
-    json_obj['pe_info']['file_alignment'] = get_file_alignment(pe)
-    ## MajorOperatingSystemVersion
-    json_obj['pe_info']['major_operating_system_version'] = get_major_operating_system_version(pe)
-    ## MinorOperatingSystemVersion
-    json_obj['pe_info']['minor_operating_system_version'] = get_minor_operating_system_version(pe)
-    ## MajorImageVersion
-    json_obj['pe_info']['major_image_version'] = get_major_image_version(pe)
-    ## MinorImageVersion
-    json_obj['pe_info']['minor_image_version'] = get_minor_image_version(pe)
-    ## MajorSubsystemVersion
-    json_obj['pe_info']['major_subsystem_version'] = get_major_subsystem_version(pe)
-    ## MinorSubsystemVersion
-    json_obj['pe_info']['minor_subsystem_version'] = get_minor_subsystem_version(pe)
-    ## SizeOfImage
-    json_obj['pe_info']['size_of_image'] = get_size_of_image(pe)
-    ## SizeOfHeaders
-    json_obj['pe_info']['size_of_headers'] = get_size_of_headers(pe)
-    ## CheckSum
-    json_obj['pe_info']['check_sum'] = get_check_sum(pe)
-    ## Subsystem
-    json_obj['pe_info']['subsystem'] = get_subsystem(pe)
-    ## DllCharacteristics
-    json_obj['pe_info']['dll_characteristics'] = get_dll_characteristics(pe)
-    ## SizeOfStackReserve
-    json_obj['pe_info']['size_of_stack_reserve'] = get_size_of_stack_reserve(pe)
-    ## SizeOfStackCommit
-    json_obj['pe_info']['size_of_stack_commit'] = get_size_of_stack_commit(pe)
-    ## SizeOfHeapReserve
-    json_obj['pe_info']['size_of_heap_reserve'] = get_size_of_heap_reserve(pe)
-    ## SizeOfHeapCommit
-    json_obj['pe_info']['size_of_heap_commit'] = get_size_of_heap_commit(pe)
-    ## LoaderFlags
-    json_obj['pe_info']['loader_flags'] = get_loader_flags(pe)
-    ## NumberOfRvaAndSizes
-    json_obj['pe_info']['number_of_rva_and_sizes'] = get_number_of_rva_and_sizes(pe)
+    json_obj['pe_info']['packer_info'] = get_packer_info(pe)
 
-    # Yaraget_number_of_rva_and_sizes(pe)
+    # Yara
     json_obj['yara'] = dict()
     ## Anti Debugging
-    json_obj['yara']['anti_debug_info'] = get_anti_debug_info( file_data )
+    #json_obj['yara']['anti_debug_info'] = get_anti_debug_info( file_data )
 
     # Fuzzy Hash
     json_obj['fuzzy_hash'] = get_fuzzy_hash( file_data )
