@@ -1,5 +1,6 @@
 ﻿import sys
 import os
+import math
 import pefile
 import peutils
 import hashlib
@@ -12,12 +13,25 @@ import M2Crypto
 
 import simplejson as json
 
+from collections import Counter
+
 _ROOT = os.path.abspath(os.path.dirname(__file__))
 _USER_DB = os.path.join(_ROOT, 'signatures', 'userdb.txt')
 #_ANTIDEBUG = os.path.join(_ROOT, 'signatures', 'AntiDebugging.yara')
 
 def print_help () :
     pass
+
+def entropy(data):
+    if len(data) == 0:
+        return 0.0
+    occurences = Counter(bytearray(data))
+    entropy = 0
+    for x in occurences.values():
+        p_x = float(x) / len(data)
+        entropy -= p_x*math.log(p_x, 2)
+
+    return entropy
 
 def isfile(file_path):
     if os.path.isfile(file_path):
@@ -82,10 +96,11 @@ def get_resources_info( pe ) :
                     if hasattr(resource_id, 'directory'):
                         for resource_lang in resource_id.directory.entries:
                             raw_data = pe.get_data(resource_lang.data.struct.OffsetToData, resource_lang.data.struct.Size)
+                            ent = entropy(raw_data)
                             raw_data = [ format(i, '02x') for i in raw_data ]
                             # lang = pefile.LANG.get(resource_lang.data.lang, '*unknown*')
                             # sublang = pefile.get_sublang_name_for_lang(resource_lang.data.lang, resource_lang.data.sublang)
-                            res_array.append({"name": name, "data": raw_data, "offset": hex(resource_lang.data.struct.OffsetToData),"size": resource_lang.data.struct.Size, "language": resource_lang.data.lang, "sublanguage": resource_lang.data.sublang})
+                            res_array.append({"name": name, "data": raw_data, "offset": hex(resource_lang.data.struct.OffsetToData),"size": resource_lang.data.struct.Size, "entropy" : ent, "language": resource_lang.data.lang, "sublanguage": resource_lang.data.sublang})
     except :
         pass
     return res_array
@@ -444,7 +459,7 @@ def run( file_path ) :
         json.dump(json_obj, f, indent=4)
 
 if __name__ == '__main__' :
-    run('/home/byeongal/다운로드/Train_Student/00ec3b8e75c08a3868bfab0ca9005808.vir')
+    run('02a85edb8712e504a5655796e8b68428.vir')
     if len(sys.argv) == 1 :
         print_help()
         exit(0)
