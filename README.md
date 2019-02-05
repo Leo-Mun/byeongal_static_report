@@ -1,8 +1,10 @@
 # Byeongal Static Report
 Byeongal Static Report is an automated static analysis open source software. You can get a report( [md5.json](./7d148e220040de2fae1439fbc0e783ef344dceaea4757611722d8378a4938d0b.json) ) which contains following informatioin:
-* File Hash ( md5, sha1, and sha256 )
-* PE File Information ( Section, Compile Information, Resources, Import, Export, API and imphash )
-
+* File Hash Information
+* File Magic
+* String
+* PE File Information
+* Fuzzy Hash
 ## Preconfiguration
 To use **Byeongal Static Report**, you have to install following python modules.
 ```bash
@@ -10,33 +12,17 @@ $ pip3 install pefile
 $ pip3 install python-magic 
 $ pip3 install yara-python
 $ pip3 install ssdeep
+$ pip3 install simplejson
+$ pip3 install M2Crypto
 ```
 ## Usage
 ```bash
 $ python3 byeongal_static.py <file_path> 
 ```
-## Feature
-* File Hash Information ( md5, sha1, sha256 )
-* File Magic
-* String
-* PE File Information
-  * Feature from [IMAGE_FILE_HEADER](https://docs.microsoft.com/en-us/windows/desktop/api/winnt/ns-winnt-image_file_header)
-  * Feature from [IMAGE_OPTIONAL_HEADER](https://docs.microsoft.com/en-us/windows/desktop/api/winnt/ns-winnt-image_optional_header32)
-  * Feature from [IMAGE_DATA_DIRECTORY](https://docs.microsoft.com/en-us/windows/desktop/api/winnt/ns-winnt-image_data_directory)
-  * Import Address Table
-  * Export Address Table
-  * Resources
-  * Sections
-  * Thread Local Storage
-  * Debug
-  * Sertificate
-* Fuzzy Hash
-  * ssdeep
-  * tlsh
-  
+
 ## Tested On
 * Ubuntu 16.04 LTS
-* Python 3.6.8
+* Python 3.5.2
 
 ## Reference
 To create this software, I refer to the following software:
