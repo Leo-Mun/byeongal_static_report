@@ -459,7 +459,6 @@ def run( file_path ) :
         json.dump(json_obj, f, indent=4)
 
 if __name__ == '__main__' :
-    run('02a85edb8712e504a5655796e8b68428.vir')
     if len(sys.argv) == 1 :
         print_help()
         exit(0)
