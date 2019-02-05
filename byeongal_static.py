@@ -9,6 +9,8 @@ import string
 import ssdeep
 import tlsh
 import M2Crypto
+import capstone
+
 #import yara
 
 import simplejson as json
@@ -347,6 +349,19 @@ def get_feature_from_basereloc( pe ) :
             ret.append(data)
     return ret
 
+def get_asm ( pe ) :
+    try :
+        machine_bit = pe.FILE_HEADER.Machine
+        ret = []
+        if machine_bit == 0x014c :
+            dis = capstone.Cs(capstone.CS_ARCH_X86, capstone.CS_MODE_32)
+            for i in dis.disasm(pe.get_memory_mapped_image()[pe.OPTIONAL_HEADER.AddressOfEntryPoint:], 0x1000) :
+                ret.append([i.address, " ".join([format(i, '02x') for i in i.bytes]), "{} {}".format(i.mnemonic, i.op_str).strip()])
+        return ret
+    except :
+        return []
+
+
 def get_certificate( pe ) :
     certs = []
     try:
@@ -446,6 +461,8 @@ def run( file_path ) :
     ## Packer Info
     json_obj['pe_info']['packer_info'] = get_packer_info(pe)
 
+    ## Disasm
+    json_obj['disasm'] = get_asm( pe )
     # Yara
     #json_obj['yara'] = dict()
     ## Anti Debugging
