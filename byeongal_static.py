@@ -312,6 +312,25 @@ def get_feature_from_debug( pe ) :
             ret.append(each_debug)
     return ret
 
+def get_feature_from_basereloc( pe ) :
+    ret = []
+    BASE_RELOCATION = ['VirtualAddress', 'SizeOfBlock']
+    RELOCATION = ['base_rva', 'rva', 'type']
+    if hasattr(pe, 'DIRECTORY_ENTRY_BASERELOC') :
+        for base_relocation_data in pe.DIRECTORY_ENTRY_BASERELOC :
+            data = dict()
+            for each in BASE_RELOCATION :
+                data[each] = getattr(base_relocation_data.struct, each, None)
+            if base_relocation_data.entries :
+                data['entries'] = []
+                for relocation_data in base_relocation_data.entries :
+                    data2 = dict()
+                    for each2 in RELOCATION :
+                        data2[each2] = getattr(relocation_data, each2, None)
+                    data2['Data'] = getattr(relocation_data.struct, 'Data', None)
+                    data['entries'].append(data2)
+            ret.append(data)
+    return ret
 
 def get_certificate( pe ) :
     certs = []
@@ -404,6 +423,8 @@ def run( file_path ) :
     json_obj['pe_info']['file_info'] = get_feature_from_file_info( pe )
     ## From Debug
     json_obj['pe_info']['debug'] = get_feature_from_debug( pe )
+    ## From BaseRelocation
+    json_obj['pe_info']['basereloc'] = get_feature_from_basereloc( pe )
     ## Sertificate
     json_obj['pe_info']['certificate'] = get_certificate(pe)
 
@@ -423,6 +444,7 @@ def run( file_path ) :
         json.dump(json_obj, f, indent=4)
 
 if __name__ == '__main__' :
+    run('/home/byeongal/다운로드/Train_Student/00ec3b8e75c08a3868bfab0ca9005808.vir')
     if len(sys.argv) == 1 :
         print_help()
         exit(0)
