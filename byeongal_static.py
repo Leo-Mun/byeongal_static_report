@@ -198,7 +198,7 @@ def get_feature_from_file_header( pe ) :
     return ret
 
 def get_feature_from_optional_header( pe ) :
-    OPTIONAL_HEADER = ['Structure', 'Magic', 'MajorLinkerVersion', 'MinorLinkerVersion', 'SizeOfCode',
+    OPTIONAL_HEADER = [ 'Magic', 'MajorLinkerVersion', 'MinorLinkerVersion', 'SizeOfCode',
                        'SizeOfInitializedData', 'SizeOfUninitializedData', 'AddressOfEntryPoint', 'BaseOfCode',
                        'BaseOfData', 'ImageBase', 'SectionAlignment', 'FileAlignment', 'MajorOperatingSystemVersion',
                        'MinorOperatingSystemVersion', 'MajorImageVersion', 'MinorImageVersion', 'MajorSubsystemVersion',
@@ -208,7 +208,7 @@ def get_feature_from_optional_header( pe ) :
     ret = dict()
     if hasattr(pe, 'OPTIONAL_HEADER') :
         for each in OPTIONAL_HEADER :
-            ret[each] = getattr(pe.FILE_HEADER, each, None)
+            ret[each] = getattr(pe.OPTIONAL_HEADER, each, None)
     return ret
 
 def get_feature_from_data_directory( pe ) :
@@ -220,10 +220,10 @@ def get_feature_from_data_directory( pe ) :
                                       'IMAGE_DIRECTORY_ENTRY_LOAD_CONFIG', 'IMAGE_DIRECTORY_ENTRY_BOUND_IMPORT',
                                       'IMAGE_DIRECTORY_ENTRY_IAT', 'IMAGE_DIRECTORY_ENTRY_DELAY_IMPORT',
                                       'IMAGE_DIRECTORY_ENTRY_COM_DESCRIPTOR', 'IMAGE_DIRECTORY_ENTRY_RESERVED']
-    ret = dict()
+    ret = list()
     if hasattr(pe, 'OPTIONAL_HEADER') and hasattr(pe.OPTIONAL_HEADER, 'DATA_DIRECTORY') :
-        for each in DATA_DIRECTORY:
-            ret[each] = getattr(pe.OPTIONAL_HEADER.DATA_DIRECTORY, each, None)
+        for each in pe.OPTIONAL_HEADER.DATA_DIRECTORY:
+            ret.append([each.name, each.VirtualAddress, each.Size])
     return ret
 
 def get_feature_from_load_config( pe ) :
@@ -258,31 +258,32 @@ def get_feature_from_tls( pe ) :
 def get_feature_from_file_info( pe ) :
     ret = list()
     if hasattr(pe, 'FileInfo') :
-        for fileinfo in pe.FileInfo:
-            if fileinfo.Key == b'StringFileInfo':
-                each = dict()
-                for st in fileinfo.StringTable:
-                    for key, value in st.entries.items():
-                        if isinstance(key, bytes) :
-                            key = key.decode()
-                        if isinstance(value, bytes) :
-                            value = value.decode()
+        for e in pe.FileInfo :
+            for fileinfo in e :
+                if fileinfo.Key == b'StringFileInfo':
+                    each = dict()
+                    for st in fileinfo.StringTable:
+                        for key, value in st.entries.items():
+                            if isinstance(key, bytes) :
+                                key = key.decode().strip(' \t\r\n\0')
+                            if isinstance(value, bytes) :
+                                value = value.decode().strip(' \t\r\n\0')
 
-                        each[key] = value
-                if len(each) != 0 :
-                    ret.append(each)
+                            each[key] = value
+                    if len(each) != 0 :
+                        ret.append(each)
 
-            if fileinfo.Key == b'VarFileInfo':
-                each = dict()
-                for var in fileinfo.Var:
-                    for key, value in var.entry.items() :
-                        if isinstance(key, bytes):
-                            key = key.decode()
-                        if isinstance(value, bytes):
-                            value = value.decode()
-                        each[key]=value
-                if len(each) != 0 :
-                    ret.append(each)
+                if fileinfo.Key == b'VarFileInfo':
+                    each = dict()
+                    for var in fileinfo.Var:
+                        for key, value in var.entry.items() :
+                            if isinstance(key, bytes):
+                                key = key.decode().strip(' \t\r\n\0')
+                            if isinstance(value, bytes):
+                                value = value.decode().strip(' \t\r\n\0')
+                            each[key]=value
+                    if len(each) != 0 :
+                        ret.append(each)
     return ret
 
 def get_feature_from_debug( pe ) :
@@ -295,22 +296,24 @@ def get_feature_from_debug( pe ) :
         for debug in pe.DIRECTORY_ENTRY_DEBUG :
             each_debug = dict()
             for each in DEBUG :
-                each_debug[each] = getattr(pe.DIRECTORY_ENTRY_DEBUG.struct, each, None)
+                each_debug[each] = getattr(debug.struct, each, None)
             if debug.entry :
                 each_debug['entry'] = dict()
                 if debug.entry.name == 'CV_INFO_PDB20' :
                     each_debug['entry']['name'] = 'CV_INFO_PDB20'
                     for key in CV_INFO_PDB20 :
                         each_debug['entry'][key] = getattr(debug.entry, key, None)
-                    each_debug['entry']['PdbFileName'] = debug.entry.PdbFileName.decode()
+                    each_debug['entry']['PdbFileName'] = debug.entry.PdbFileName.decode().strip(' \t\r\n\0')
                 elif debug.entry.name == 'CV_INFO_PDB70' :
                     each_debug['entry']['name'] = 'CV_INFO_PDB70'
                     for key in CV_INFO_PDB70 :
                         each_debug['entry'][key] = getattr(debug.entry, key, None)
-                    each_debug['entry']['PdbFileName'] = debug.entry.PdbFileName.decode()
+                    each_debug['entry']['PdbFileName'] = debug.entry.PdbFileName.decode().strip(' \t\r\n\0')
+            ret.append(each_debug)
     return ret
 
-def get_sertificate( pe ) :
+
+def get_certificate( pe ) :
     certs = []
     try:
         dir_index = pefile.DIRECTORY_ENTRY["IMAGE_DIRECTORY_ENTRY_SECURITY"]
@@ -319,13 +322,13 @@ def get_sertificate( pe ) :
             return certs
         else:
             signatures = pe.write()[dir_entry.VirtualAddress + 8:]
-            bio = M2Crypto.BIO.MemoryBuffer(signatures)
+            bio = M2Crypto.BIO.MemoryBuffer(bytes(signatures))
             if not bio:
-                pe_list_for_ml.append(0)
+                return certs
             else:
                 pkcs7_obj = M2Crypto.m2.pkcs7_read_bio_der(bio.bio_ptr())
                 if not pkcs7_obj:
-                    pe_list_for_ml.append(0)
+                    return certs
                 else:
                     certs = []
                     p7 = M2Crypto.SMIME.PKCS7(pkcs7_obj)
@@ -337,7 +340,7 @@ def get_sertificate( pe ) :
                             "country": subject.C,
                             "locality": subject.L,
                             "organization": subject.O,
-                            "email": subject.Email,
+                            #"email": subject.Email,
                             "sha1": "%040x" % int(cert.get_fingerprint("sha1"), 16),
                             "md5": "%032x" % int(cert.get_fingerprint("md5"), 16),
                         })
@@ -387,6 +390,12 @@ def run( file_path ) :
     json_obj['pe_info']['optional_header'] = get_feature_from_optional_header( pe )
     ## From Data Directory
     json_obj['pe_info']['data_directory'] = get_feature_from_data_directory( pe )
+    ## From IAT
+    json_obj['pe_info']['import'] = get_import_function( pe )
+    ## From EAT
+    json_obj['pe_info']['export'] = get_export_function( pe )
+    ## From Res
+    json_obj['pe_info']['resource'] = get_resources_info( pe )
     ## From Load Config
     json_obj['pe_info']['load_config'] = get_feature_from_load_config( pe )
     ## From TLS
@@ -396,10 +405,10 @@ def run( file_path ) :
     ## From Debug
     json_obj['pe_info']['debug'] = get_feature_from_debug( pe )
     ## Sertificate
-    json_obj['pe_info']['sertificate'] = get_sertificate(pe)
+    json_obj['pe_info']['certificate'] = get_certificate(pe)
 
     ## Packer Info
-    #json_obj['pe_info']['packer_info'] = get_packer_info(pe)
+    json_obj['pe_info']['packer_info'] = get_packer_info(pe)
 
     # Yara
     #json_obj['yara'] = dict()
@@ -410,7 +419,7 @@ def run( file_path ) :
     json_obj['fuzzy_hash'] = get_fuzzy_hash( file_data )
 
     # Save report file
-    with open("{}.json".format(json_obj['hash']['sha256']), 'w') as f :
+    with open("{}.json".format(json_obj['hash']['md5']), 'w') as f :
         json.dump(json_obj, f, indent=4)
 
 if __name__ == '__main__' :
